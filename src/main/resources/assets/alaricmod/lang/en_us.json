@@ -2,5 +2,8 @@
   "item.alaricmod.sapphire": "Sapphire",
   "item.alaricmod.raw_sapphire": "Raw Sapphire",
 
+  "block.alaricmod.sapphire_block": "Block of Sapphire",
+  "block.alaricmod.raw_sapphire_block":"Block of Raw Sapphire",
+
   "creative_tab.tutorial_tab": "Sapphire Tutorial Tab"
 }
