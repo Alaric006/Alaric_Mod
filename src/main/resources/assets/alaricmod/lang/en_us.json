@@ -4,6 +4,8 @@
 
   "block.alaricmod.sapphire_block": "Block of Sapphire",
   "block.alaricmod.raw_sapphire_block":"Block of Raw Sapphire",
+  "block.alaricmod.sapphire_ore": "Sapphire Ore",
+  "block.alaricmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
 
   "creative_tab.tutorial_tab": "Sapphire Tutorial Tab"
 }

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "sapphire",
+  "ingredients": [
+    {
+      "item": "alaricmod:sapphire_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "alaricmod:sapphire"
+  }
+}
