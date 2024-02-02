@@ -3,6 +3,7 @@
     "alaricmod:sapphire_block",
     "alaricmod:raw_sapphire_block",
     "alaricmod:sapphire_ore",
-    "alaricmod:deepslate_sapphire_ore"
+    "alaricmod:deepslate_sapphire_ore",
+    "alaricmod:sound_block"
   ]
 }

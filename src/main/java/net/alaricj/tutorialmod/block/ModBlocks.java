@@ -1,6 +1,7 @@
 package net.alaricj.tutorialmod.block;
 
 import net.alaricj.tutorialmod.TutorialMod;
+import net.alaricj.tutorialmod.block.custom.SoundBlock;
 import net.alaricj.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -29,6 +30,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE =
             registerBlock("deepslate_sapphire_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(3.0f),
                     UniformInt.of(3, 5)));
+    public static final RegistryObject<Block> SOUND_BLOCK =
+            registerBlock("sound_block", () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
