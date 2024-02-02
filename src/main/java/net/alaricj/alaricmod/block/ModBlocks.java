@@ -1,8 +1,8 @@
-package net.alaricj.tutorialmod.block;
+package net.alaricj.alaricmod.block;
 
-import net.alaricj.tutorialmod.TutorialMod;
-import net.alaricj.tutorialmod.block.custom.SoundBlock;
-import net.alaricj.tutorialmod.item.ModItems;
+import net.alaricj.alaricmod.TutorialMod;
+import net.alaricj.alaricmod.block.custom.SoundBlock;
+import net.alaricj.alaricmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

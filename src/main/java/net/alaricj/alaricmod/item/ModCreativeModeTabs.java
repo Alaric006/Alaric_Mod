@@ -1,7 +1,7 @@
-package net.alaricj.tutorialmod.item;
+package net.alaricj.alaricmod.item;
 
-import net.alaricj.tutorialmod.TutorialMod;
-import net.alaricj.tutorialmod.block.ModBlocks;
+import net.alaricj.alaricmod.TutorialMod;
+import net.alaricj.alaricmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,6 +20,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SAPPHIRE.get());
                         output.accept(ModItems.RAW_SAPPHIRE.get());
                         output.accept(ModItems.STRAWBERRY.get());
+                        output.accept(ModItems.PINE_CONE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
                         output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
                         output.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());

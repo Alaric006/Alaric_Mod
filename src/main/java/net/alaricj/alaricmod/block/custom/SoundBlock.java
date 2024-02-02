@@ -1,4 +1,4 @@
-package net.alaricj.tutorialmod.block.custom;
+package net.alaricj.alaricmod.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;

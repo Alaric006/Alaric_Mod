@@ -1,9 +1,9 @@
-package net.alaricj.tutorialmod;
+package net.alaricj.alaricmod;
 
 import com.mojang.logging.LogUtils;
-import net.alaricj.tutorialmod.block.ModBlocks;
-import net.alaricj.tutorialmod.item.ModCreativeModeTabs;
-import net.alaricj.tutorialmod.item.ModItems;
+import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.item.ModCreativeModeTabs;
+import net.alaricj.alaricmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -11,9 +11,7 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

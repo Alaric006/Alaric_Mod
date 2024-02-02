@@ -2,6 +2,7 @@
   "item.alaricmod.sapphire": "Sapphire",
   "item.alaricmod.raw_sapphire": "Raw Sapphire",
   "item.alaricmod.strawberry": "Strawberry",
+  "item.alaricmod.pine_cone": "Pine Cone",
   "item.alaricmod.metal_detector": "Metal Detector",
 
   "block.alaricmod.sapphire_block": "Block of Sapphire",
@@ -10,5 +11,6 @@
   "block.alaricmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.alaricmod.sound_block": "Sound Block",
 
-  "creative_tab.tutorial_tab": "Sapphire Tutorial Tab"
+  "creative_tab.tutorial_tab": "Sapphire Tutorial Tab",
+  "tooltip.alaricmod.metal_detector.tooltip": "Finds valuables underground!"
 }

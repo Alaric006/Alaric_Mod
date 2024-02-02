@@ -1,4 +1,4 @@
-package net.alaricj.tutorialmod.item;
+package net.alaricj.alaricmod.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
