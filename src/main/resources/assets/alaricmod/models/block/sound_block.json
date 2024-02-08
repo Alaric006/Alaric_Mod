@@ -1,6 +1,0 @@
-{
-  "parent":"minecraft:block/cube_all",
-  "textures": {
-    "all": "alaricmod:block/sound_block"
-  }
-}
