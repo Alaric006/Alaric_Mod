@@ -1,0 +1,4 @@
+// 1.20.1	2024-02-08T16:38:02.9754631	Tags for minecraft:block mod id alaricmod
+830226d129cd92a4a8f3fc38e6d9147333ae9b4c data/alaricmod/tags/blocks/metal_detector_valuables.json
+f5836c2bb41c11b4920b0a320928fe9d34538685 data/minecraft/tags/blocks/mineable/pickaxe.json
+f5836c2bb41c11b4920b0a320928fe9d34538685 data/minecraft/tags/blocks/needs_iron_tool.json
