@@ -1,6 +1,15 @@
-// 1.20.1	2024-02-08T16:38:02.9740677	Item Models: alaricmod
+// 1.20.1	2024-02-08T19:40:52.0948573	Item Models: alaricmod
 c65d78e216df10607ccf692422be059ed591a373 assets/alaricmod/models/item/metal_detector.json
 0a927b43724f14256cb8f7d482c0c560402fd51c assets/alaricmod/models/item/pine_cone.json
 1eb5f907c3e3e305b0d448b668c7881f9f9e8ea0 assets/alaricmod/models/item/raw_sapphire.json
 cefc61661a82dc0eb51ccb3ecc67fdfe25c206b6 assets/alaricmod/models/item/sapphire.json
+8ead026ca80c1ced6b9a0b7f617f6a4d637c9680 assets/alaricmod/models/item/sapphire_button.json
+717fa35e2bf3403548158ee857448d5ee356ff55 assets/alaricmod/models/item/sapphire_door.json
+9b05e2f117e551f519021ed15d1481825ba62a53 assets/alaricmod/models/item/sapphire_fence.json
+a71b6c85f5b5875448c689de1a7b1c0a38266c0a assets/alaricmod/models/item/sapphire_fence_gate.json
+ce1fb8c0c3a5351f97ed4c660eb75166efe147c1 assets/alaricmod/models/item/sapphire_pressure_plate.json
+ff6e85e8dbfc9bc0ed39839bb23096ba3e836396 assets/alaricmod/models/item/sapphire_slab.json
+a54162c265701e729c8ad91aefb3301177040525 assets/alaricmod/models/item/sapphire_stairs.json
+53e16e419eeee828674e6e7e0f801ec9f5ca769b assets/alaricmod/models/item/sapphire_trapdoor.json
+a871fe19a49d6e371cd435d04cacb9bdd9bede96 assets/alaricmod/models/item/sapphire_wall.json
 bcb3658d20d2834060e79e2de3cc1ea8e27ede78 assets/alaricmod/models/item/strawberry.json

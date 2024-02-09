@@ -1,6 +1,15 @@
-// 1.20.1	2024-02-08T16:38:02.97656	Loot Tables
+// 1.20.1	2024-02-08T18:21:47.1651881	Loot Tables
 840660b0d0553a0b23e70242dbc710479c576667 data/alaricmod/loot_tables/blocks/deepslate_sapphire_ore.json
 33d0e2b29a9162d4edcddff24b6d7d654fb99f0a data/alaricmod/loot_tables/blocks/raw_sapphire_block.json
 8e3c83c8f6c4fd4384cd6323de7d08bc46fc1834 data/alaricmod/loot_tables/blocks/sapphire_block.json
+3799bebd73c38d070109f05826be5541e773dda7 data/alaricmod/loot_tables/blocks/sapphire_button.json
+dbb99835e024ce2f6b1bb22d559a5c59bb5b9cd8 data/alaricmod/loot_tables/blocks/sapphire_door.json
+6319c0b1a393f8313034f3002595bece34c7a6de data/alaricmod/loot_tables/blocks/sapphire_fence.json
+f57fcff0bf6bddb3f48b63188e932a0e6038a7ee data/alaricmod/loot_tables/blocks/sapphire_fence_gate.json
 43045cf8d5065d00b732be1e391d89c4caf68c1a data/alaricmod/loot_tables/blocks/sapphire_ore.json
+4fb393ebd161c6bef679c3601c68ed7c76550186 data/alaricmod/loot_tables/blocks/sapphire_pressure_plate.json
+e8a107b0d8141ae09369ba92d6b7ce3005178083 data/alaricmod/loot_tables/blocks/sapphire_slab.json
+f00478b11a32714678f0f7b25086bc943517c2f1 data/alaricmod/loot_tables/blocks/sapphire_stairs.json
+90ecb3a5c9b21637b3367dd91bef5e84654f85f8 data/alaricmod/loot_tables/blocks/sapphire_trapdoor.json
+4ed2c0d5b7d9171e23e6b949ad310cd703c4999a data/alaricmod/loot_tables/blocks/sapphire_wall.json
 4bead0c33ea6865847eb5f852591350a1078105c data/alaricmod/loot_tables/blocks/sound_block.json
