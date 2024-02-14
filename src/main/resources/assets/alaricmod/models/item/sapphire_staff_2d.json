@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alaricmod:item/sapphire_staff"
+    }
+}

@@ -4,6 +4,13 @@
   "item.alaricmod.strawberry": "Strawberry",
   "item.alaricmod.pine_cone": "Pine Cone",
   "item.alaricmod.metal_detector": "Metal Detector",
+  "item.alaricmod.sapphire_staff": "Sapphire Staff",
+  "item.alaricmod.sapphire_sword": "Sapphire Sword",
+  "item.alaricmod.sapphire_axe": "Sapphire Axe",
+  "item.alaricmod.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.alaricmod.sapphire_shovel": "Sapphire Shovel",
+  "item.alaricmod.sapphire_hoe": "Sapphire Hoe",
+
 
   "block.alaricmod.sapphire_block": "Block of Sapphire",
   "block.alaricmod.raw_sapphire_block": "Block of Raw Sapphire",

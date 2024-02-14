@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STRAWBERRY.get());
                         output.accept(ModItems.PINE_CONE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
+                        output.accept(ModItems.SAPPHIRE_STAFF.get());
                         output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
                         output.accept(ModBlocks.SAPPHIRE_STAIRS.get());
                         output.accept(ModBlocks.SAPPHIRE_BUTTON.get());
@@ -36,6 +37,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SOUND_BLOCK.get());
                         output.accept(ModBlocks.SAPPHIRE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+
+                        output.accept(ModItems.SAPPHIRE_SWORD.get());
+                        output.accept(ModItems.SAPPHIRE_PICKAXE.get());
+                        output.accept(ModItems.SAPPHIRE_AXE.get());
+                        output.accept(ModItems.SAPPHIRE_SHOVEL.get());
+                        output.accept(ModItems.SAPPHIRE_HOE.get());
                     })
                     .build());
 

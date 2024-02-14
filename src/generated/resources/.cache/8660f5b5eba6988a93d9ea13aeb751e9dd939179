@@ -1,7 +1,8 @@
-// 1.20.1	2024-02-08T18:21:47.1651881	Tags for minecraft:block mod id alaricmod
+// 1.20.1	2024-02-13T21:03:33.7089185	Tags for minecraft:block mod id alaricmod
 830226d129cd92a4a8f3fc38e6d9147333ae9b4c data/alaricmod/tags/blocks/metal_detector_valuables.json
+cec5a4c6cf1ab81c42171fbe8b4015da5861cf9b data/alaricmod/tags/blocks/needs_sapphire_tool.json
 85694c4c8effa184583bd3c56ff86131ace571fc data/minecraft/tags/blocks/fences.json
 cf900c3c95e34b4bbca8e1073a90e4ffb6528edc data/minecraft/tags/blocks/fence_gates.json
 f5836c2bb41c11b4920b0a320928fe9d34538685 data/minecraft/tags/blocks/mineable/pickaxe.json
-f5836c2bb41c11b4920b0a320928fe9d34538685 data/minecraft/tags/blocks/needs_iron_tool.json
+777e0e3fae849df2c46ef5eb22746b36893b3932 data/minecraft/tags/blocks/needs_iron_tool.json
 474740518d58a31f8117da725032bb73b91487ba data/minecraft/tags/blocks/walls.json
