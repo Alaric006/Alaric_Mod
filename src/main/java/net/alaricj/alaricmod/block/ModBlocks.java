@@ -1,7 +1,9 @@
 package net.alaricj.alaricmod.block;
 
 import net.alaricj.alaricmod.TutorialMod;
+import net.alaricj.alaricmod.block.custom.CornCropBlock;
 import net.alaricj.alaricmod.block.custom.SoundBlock;
+import net.alaricj.alaricmod.block.custom.StrawberryCropBlock;
 import net.alaricj.alaricmod.item.ModItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -49,6 +51,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> SOUND_BLOCK =
             registerBlock("sound_block", () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
+    public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+            () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> CORN_CROP = BLOCKS.register("corn_crop",
+            () -> new CornCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

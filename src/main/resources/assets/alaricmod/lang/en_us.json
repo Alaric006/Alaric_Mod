@@ -2,6 +2,7 @@
   "item.alaricmod.sapphire": "Sapphire",
   "item.alaricmod.raw_sapphire": "Raw Sapphire",
   "item.alaricmod.strawberry": "Strawberry",
+  "item.alaricmod.corn": "Corn",
   "item.alaricmod.pine_cone": "Pine Cone",
   "item.alaricmod.metal_detector": "Metal Detector",
   "item.alaricmod.sapphire_staff": "Sapphire Staff",
@@ -16,6 +17,8 @@
   "item.alaricmod.sapphire_leggings": "Sapphire Leggings",
   "item.alaricmod.sapphire_boots": "Sapphire Boots",
 
+  "item.alaricmod.strawberry_seeds": "Strawberry Seeds",
+  "item.alaricmod.corn_seeds": "Corn Seeds",
 
   "block.alaricmod.sapphire_block": "Block of Sapphire",
   "block.alaricmod.raw_sapphire_block": "Block of Raw Sapphire",

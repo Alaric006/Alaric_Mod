@@ -1,6 +1,7 @@
 package net.alaricj.alaricmod.item;
 
 import net.alaricj.alaricmod.TutorialMod;
+import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.item.custom.FuelItem;
 import net.alaricj.alaricmod.item.custom.MetalDetectorItem;
 import net.alaricj.alaricmod.item.custom.ModToolTiers;
@@ -22,6 +23,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone", () -> new FuelItem(new Item.Properties(), 400));
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry", () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
+    public static final RegistryObject<Item> CORN = ITEMS.register("corn", () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff", () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword", () -> new SwordItem(ModToolTiers.SAPPHIRE,
             4, 2, new Item.Properties().stacksTo(1)));
@@ -41,6 +43,11 @@ public class ModItems {
             ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots", () -> new ArmorItem(ModArmorMaterials.SAPPHIRE,
             ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds", () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds", () -> new ItemNameBlockItem(ModBlocks.CORN_CROP.get(), new Item.Properties()));
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

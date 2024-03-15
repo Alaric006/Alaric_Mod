@@ -19,7 +19,6 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SAPPHIRE.get());
                         output.accept(ModItems.RAW_SAPPHIRE.get());
-                        output.accept(ModItems.STRAWBERRY.get());
                         output.accept(ModItems.PINE_CONE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
@@ -37,6 +36,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SOUND_BLOCK.get());
                         output.accept(ModBlocks.SAPPHIRE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+
+                        output.accept(ModItems.STRAWBERRY_SEEDS.get());
+                        output.accept(ModItems.CORN_SEEDS.get());
+                        output.accept(ModItems.STRAWBERRY.get());
+                        output.accept(ModItems.CORN.get());
 
                         output.accept(ModItems.SAPPHIRE_SWORD.get());
                         output.accept(ModItems.SAPPHIRE_PICKAXE.get());

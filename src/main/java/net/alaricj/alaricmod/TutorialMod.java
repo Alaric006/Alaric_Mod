@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.item.ModCreativeModeTabs;
 import net.alaricj.alaricmod.item.ModItems;
+import net.alaricj.alaricmod.loot.ModLootModifiers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +34,8 @@ public class TutorialMod
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
