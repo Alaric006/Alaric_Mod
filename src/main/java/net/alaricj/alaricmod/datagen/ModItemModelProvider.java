@@ -49,6 +49,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.STRAWBERRY_SEEDS);
         simpleItem(ModItems.CORN);
         simpleItem(ModItems.CORN_SEEDS);
+        simpleBlockItemBlockTexture(ModBlocks.CATMINT);
 
         simpleItem(ModItems.PINE_CONE);
 
@@ -135,6 +136,13 @@ public class ModItemModelProvider extends ItemModelProvider {
                 item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(TutorialMod.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
+        return withExistingParent(
+                item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TutorialMod.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder evenSimplerBlockItem(RegistryObject<Block> block) {

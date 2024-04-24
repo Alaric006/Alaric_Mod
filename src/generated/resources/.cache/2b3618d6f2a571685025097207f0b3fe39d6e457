@@ -1,6 +1,8 @@
-// 1.20.1	2024-03-15T17:31:46.6408008	Block States: alaricmod
+// 1.20.1	2024-03-28T17:37:10.5262951	Block States: alaricmod
+8c8bfcdc72fe53a918eaddc26bdfc4a079a9cca8 assets/alaricmod/blockstates/catmint.json
 dc3e7afe9010c7000d8f5047db195f19c101e5f6 assets/alaricmod/blockstates/corn_crop.json
 9551096e36c348c8e9ab967d08f6e5c522f1b24d assets/alaricmod/blockstates/deepslate_sapphire_ore.json
+620ae4bcf6337e8c2c5a14c31f0e48bfeb3452ce assets/alaricmod/blockstates/potted_catmint.json
 66b87ab7d2c24c69c2d6530c061641062240b03f assets/alaricmod/blockstates/raw_sapphire_block.json
 3b2379b55b69800c7576705dfb4f96eb0178b316 assets/alaricmod/blockstates/sapphire_block.json
 c8adb702dfcfe4ab6e1856909f24893a401c5e64 assets/alaricmod/blockstates/sapphire_button.json
@@ -15,6 +17,7 @@ a57786fa53baf9a29209d7d7522e773401d0b2e4 assets/alaricmod/blockstates/sapphire_o
 6776f08f3dadb61539bff517e9d3e43a95a43908 assets/alaricmod/blockstates/sapphire_wall.json
 2f78203dbb8fd8cb781cc0a7d70d973f59a60f5e assets/alaricmod/blockstates/sound_block.json
 f0a4a895450516347070114797540bc34f07adf9 assets/alaricmod/blockstates/strawberry_crop.json
+e4983f6a4d38fafcf52a554fe634069f8426b53c assets/alaricmod/models/block/catmint.json
 b12c51aa2249931e294b27a8f4f11fbfa6922bb7 assets/alaricmod/models/block/corn_stage_0.json
 071babfa40a71597276f2910521b8797130441e0 assets/alaricmod/models/block/corn_stage_1.json
 f319ed0aa63dccc2598ccfab5e57ec4efa9e3522 assets/alaricmod/models/block/corn_stage_2.json
@@ -25,6 +28,7 @@ c68d29b45ee0c44e29058ad69d83c0b0df474a09 assets/alaricmod/models/block/corn_stag
 144a1e5e56588156adb9417ebedcdc3660ca56ea assets/alaricmod/models/block/corn_stage_7.json
 35e04a8e2f5d17f27b8aa7b94dd67db28cc29adb assets/alaricmod/models/block/corn_stage_8.json
 a74ff95d4c2cfaea2d266bdadf68fa8e2b88c6f4 assets/alaricmod/models/block/deepslate_sapphire_ore.json
+ee3944966dbcce9a173b1242371b117bfbd6c12e assets/alaricmod/models/block/potted_catmint.json
 a747ecb8a0a37c428a690503f364cfd32738a3e8 assets/alaricmod/models/block/raw_sapphire_block.json
 2c619b96fb37d374fe85d7da6c28f53ad12c3e80 assets/alaricmod/models/block/sapphire_block.json
 3ce0f320543bf2b2d7a6e2d3c156a09f61a76393 assets/alaricmod/models/block/sapphire_button.json
@@ -64,7 +68,9 @@ efa4590722756cbd1bf9425c8432a4cb96d9541f assets/alaricmod/models/block/strawberr
 c5d7101adf533d0a510b71510da58965ee50e42e assets/alaricmod/models/block/strawberry_stage3.json
 03b5754f751e4fb752c07ef6c77cf4c557f6941a assets/alaricmod/models/block/strawberry_stage4.json
 0caa3b8310d09fd20422666975b950f5ad92d79d assets/alaricmod/models/block/strawberry_stage5.json
+5433f717583eadb7cc01b5d2d675c59460ec4a90 assets/alaricmod/models/item/catmint.json
 531395eb826f1540749b67e14550dddfbb363f85 assets/alaricmod/models/item/deepslate_sapphire_ore.json
+39a4706fa9ef2b39ceb738897e56a33fc92e2e15 assets/alaricmod/models/item/potted_catmint.json
 7dee4c7d2027db94d286dc6c58b9ea4f4a46ac26 assets/alaricmod/models/item/raw_sapphire_block.json
 73aaffa0d8698c70e2a4f088770d054e41362fb7 assets/alaricmod/models/item/sapphire_block.json
 2f8bf589bf2576f1598e779390952a2b17540938 assets/alaricmod/models/item/sapphire_ore.json

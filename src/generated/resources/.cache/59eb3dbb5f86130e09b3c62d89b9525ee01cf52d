@@ -1,6 +1,8 @@
-// 1.20.1	2024-03-15T17:31:46.6429042	Loot Tables
+// 1.20.1	2024-03-28T17:37:10.5292958	Loot Tables
+2ada294334f7d8d618fb035bf6762ed43b929c06 data/alaricmod/loot_tables/blocks/catmint.json
 5a21e56afc4dc87e421ef9b141d1b99b9f28f824 data/alaricmod/loot_tables/blocks/corn_crop.json
 840660b0d0553a0b23e70242dbc710479c576667 data/alaricmod/loot_tables/blocks/deepslate_sapphire_ore.json
+1bc3a6dd62800bb8f56bd9553dd8d3e1f67e6b79 data/alaricmod/loot_tables/blocks/potted_catmint.json
 33d0e2b29a9162d4edcddff24b6d7d654fb99f0a data/alaricmod/loot_tables/blocks/raw_sapphire_block.json
 8e3c83c8f6c4fd4384cd6323de7d08bc46fc1834 data/alaricmod/loot_tables/blocks/sapphire_block.json
 3799bebd73c38d070109f05826be5541e773dda7 data/alaricmod/loot_tables/blocks/sapphire_button.json
