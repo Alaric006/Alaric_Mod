@@ -5,7 +5,9 @@ import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.item.ModCreativeModeTabs;
 import net.alaricj.alaricmod.item.ModItems;
 import net.alaricj.alaricmod.loot.ModLootModifiers;
+import net.alaricj.alaricmod.sound.ModSounds;
 import net.alaricj.alaricmod.villager.ModVillagers;
+import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -39,6 +41,7 @@ public class TutorialMod
         ModBlocks.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

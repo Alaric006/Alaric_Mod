@@ -1,0 +1,47 @@
+{
+  "metal_detector_found_ore": {
+    "subtitles": "sounds.alaricmod.metal_detector_found_ore",
+    "sounds": [
+      "alaricmod:metal_detector_found_ore"
+    ]
+  },
+  "sound_block_break": {
+    "subtitle": "sounds.alaricmod.sound_block_break",
+    "sounds": [
+      "alaricmod:sound_block_break"
+    ]
+  },
+  "sound_block_step": {
+    "subtitle": "sounds.alaricmod.sound_block_step",
+    "sounds": [
+      "alaricmod:sound_block_step"
+    ]
+  },
+  "sound_block_place": {
+    "subtitle": "sounds.alaricmod.sound_block_place",
+    "sounds": [
+      "alaricmod:sound_block_place"
+    ]
+  },
+  "sound_block_hit": {
+    "subtitle": "sounds.alaricmod.sound_block_hit",
+    "sounds": [
+      "alaricmod:sound_block_hit"
+    ]
+  },
+  "sound_block_fall": {
+    "subtitle": "sounds.alaricmod.sound_block_fall",
+    "sounds": [
+      "alaricmod:sound_block_fall"
+    ]
+  },
+  "bar_brawl": {
+    "subtitle": "sounds.alaricmod.bar_brawl",
+    "sounds": [
+      {
+        "name": "alaricmod:bar_brawl",
+        "stream": "true"
+      }
+    ]
+  }
+}

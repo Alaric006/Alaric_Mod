@@ -5,6 +5,7 @@ import net.alaricj.alaricmod.block.custom.CornCropBlock;
 import net.alaricj.alaricmod.block.custom.SoundBlock;
 import net.alaricj.alaricmod.block.custom.StrawberryCropBlock;
 import net.alaricj.alaricmod.item.ModItems;
+import net.alaricj.alaricmod.sound.ModSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -50,7 +51,7 @@ public class ModBlocks {
             registerBlock("deepslate_sapphire_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(3.0f),
                     UniformInt.of(3, 5)));
     public static final RegistryObject<Block> SOUND_BLOCK =
-            registerBlock("sound_block", () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            registerBlock("sound_block", () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSounds.SOUND_BLOCKS_SOUNDS)));
 
     public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
             () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));

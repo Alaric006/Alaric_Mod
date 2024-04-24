@@ -21,6 +21,9 @@
   "item.alaricmod.strawberry_seeds": "Strawberry Seeds",
   "item.alaricmod.corn_seeds": "Corn Seeds",
 
+  "item.alaricmod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.alaricmod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+
   "block.alaricmod.sapphire_block": "Block of Sapphire",
   "block.alaricmod.raw_sapphire_block": "Block of Raw Sapphire",
   "block.alaricmod.sapphire_stairs": "Sapphire Stairs",
@@ -39,5 +42,8 @@
   "entity.minecraft.villager.alaricmod.sound_master": "Sound Master",
 
   "creative_tab.tutorial_tab": "Sapphire Tutorial Tab",
-  "tooltip.alaricmod.metal_detector.tooltip": "Finds valuables underground!"
+  "tooltip.alaricmod.metal_detector.tooltip": "Finds valuables underground!",
+
+  "sounds.tutorialmod.metal_detector_found_ore": "Metal Detector Jingle",
+  "sounds.alaricmod.bar_brawl": "Bar Brawl music disk begins play"
 }
