@@ -36,6 +36,8 @@
   "block.alaricmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.alaricmod.sound_block": "Sound Block",
 
+  "entity.minecraft.villager.alaricmod.sound_master": "Sound Master",
+
   "creative_tab.tutorial_tab": "Sapphire Tutorial Tab",
   "tooltip.alaricmod.metal_detector.tooltip": "Finds valuables underground!"
 }

@@ -2,7 +2,9 @@ package net.alaricj.alaricmod.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.alaricj.alaricmod.TutorialMod;
+import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.item.ModItems;
+import net.alaricj.alaricmod.villager.ModVillagers;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -31,6 +33,17 @@ public class ModEvents {
                         0.02f
                 );
             });
+        }
+
+        if(event.getType() == ModVillagers.SOUND_MASTER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            trades.get(1).add( (pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 2),
+                    new ItemStack(ModBlocks.SOUND_BLOCK.get(), 1),
+                    20,
+                    8,
+                    0.015f
+            ));
         }
     }
     @SubscribeEvent
