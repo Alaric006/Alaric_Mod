@@ -2,11 +2,14 @@ package net.alaricj.alaricmod;
 
 import com.mojang.logging.LogUtils;
 import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.entity.ModEntities;
+import net.alaricj.alaricmod.entity.client.RhinoRenderer;
 import net.alaricj.alaricmod.item.ModCreativeModeTabs;
 import net.alaricj.alaricmod.item.ModItems;
 import net.alaricj.alaricmod.loot.ModLootModifiers;
 import net.alaricj.alaricmod.sound.ModSounds;
 import net.alaricj.alaricmod.villager.ModVillagers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -39,6 +42,7 @@ public class TutorialMod
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModSounds.register(modEventBus);
@@ -83,6 +87,7 @@ public class TutorialMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
         }
     }
 }

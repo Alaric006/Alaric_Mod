@@ -53,6 +53,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SAPPHIRE_CHESTPLATE.get());
                         output.accept(ModItems.SAPPHIRE_LEGGINGS.get());
                         output.accept(ModItems.SAPPHIRE_BOOTS.get());
+
+                        output.accept(ModItems.RHINO_SPAWN_EGG.get());
                     })
                     .build());
 
