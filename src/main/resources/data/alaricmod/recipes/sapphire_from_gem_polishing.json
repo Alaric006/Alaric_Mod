@@ -1,0 +1,10 @@
+{
+  "type": "alaricmod:gem_polishing",
+  "ingredients": [{
+    "item": "alaricmod:raw_sapphire"
+  }],
+  "output": {
+    "count": 3,
+    "item": "alaricmod:sapphire"
+  }
+}

@@ -2,13 +2,19 @@ package net.alaricj.alaricmod;
 
 import com.mojang.logging.LogUtils;
 import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.block.entity.ModBlockEntities;
 import net.alaricj.alaricmod.entity.ModEntities;
 import net.alaricj.alaricmod.entity.client.RhinoRenderer;
 import net.alaricj.alaricmod.item.ModCreativeModeTabs;
 import net.alaricj.alaricmod.item.ModItems;
 import net.alaricj.alaricmod.loot.ModLootModifiers;
+import net.alaricj.alaricmod.recipe.ModRecipes;
+import net.alaricj.alaricmod.screen.GemPolishingStationMenu;
+import net.alaricj.alaricmod.screen.GemPolishingStationScreen;
+import net.alaricj.alaricmod.screen.ModMenuTypes;
 import net.alaricj.alaricmod.sound.ModSounds;
 import net.alaricj.alaricmod.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -42,10 +48,14 @@ public class TutorialMod
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModEntities.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -88,6 +98,7 @@ public class TutorialMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }

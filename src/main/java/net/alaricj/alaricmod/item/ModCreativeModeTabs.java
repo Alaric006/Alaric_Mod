@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SOUND_BLOCK.get());
                         output.accept(ModBlocks.SAPPHIRE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+                        output.accept(ModBlocks.GEM_POLISHING_STATION.get());
 
                         output.accept(ModItems.STRAWBERRY_SEEDS.get());
                         output.accept(ModItems.CORN_SEEDS.get());
