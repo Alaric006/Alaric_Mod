@@ -38,6 +38,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
                         output.accept(ModBlocks.GEM_POLISHING_STATION.get());
 
+                        output.accept(ModBlocks.PINE_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_PINE_LOG.get());
+                        output.accept(ModBlocks.PINE_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_PINE_WOOD.get());
+
+                        output.accept(ModBlocks.PINE_PLANKS.get());
+                        output.accept(ModBlocks.PINE_LEAVES.get());
+
                         output.accept(ModItems.STRAWBERRY_SEEDS.get());
                         output.accept(ModItems.CORN_SEEDS.get());
                         output.accept(ModItems.STRAWBERRY.get());

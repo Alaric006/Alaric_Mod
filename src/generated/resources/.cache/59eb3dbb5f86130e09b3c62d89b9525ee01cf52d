@@ -1,8 +1,12 @@
-// 1.20.1	2024-05-21T15:30:52.7484355	Loot Tables
+// 1.20.1	2024-05-24T16:52:13.4780611	Loot Tables
 2ada294334f7d8d618fb035bf6762ed43b929c06 data/alaricmod/loot_tables/blocks/catmint.json
 5a21e56afc4dc87e421ef9b141d1b99b9f28f824 data/alaricmod/loot_tables/blocks/corn_crop.json
 840660b0d0553a0b23e70242dbc710479c576667 data/alaricmod/loot_tables/blocks/deepslate_sapphire_ore.json
 2e071e38f87909641eb3f0aa6f6ccc5fd64b886d data/alaricmod/loot_tables/blocks/gem_polishing_station.json
+55d9c57108ab0c2d59372b2f42a1c29212e3ca2c data/alaricmod/loot_tables/blocks/pine_leaves.json
+dae8e0bb9c825e2d9cda10b999671ff0368f5960 data/alaricmod/loot_tables/blocks/pine_log.json
+737d5d69312b3b70241327bdaa58867121d76fa8 data/alaricmod/loot_tables/blocks/pine_planks.json
+6e0eebaa7c46e6e810f3a556904afb2c247e4958 data/alaricmod/loot_tables/blocks/pine_wood.json
 1bc3a6dd62800bb8f56bd9553dd8d3e1f67e6b79 data/alaricmod/loot_tables/blocks/potted_catmint.json
 33d0e2b29a9162d4edcddff24b6d7d654fb99f0a data/alaricmod/loot_tables/blocks/raw_sapphire_block.json
 8e3c83c8f6c4fd4384cd6323de7d08bc46fc1834 data/alaricmod/loot_tables/blocks/sapphire_block.json
@@ -18,3 +22,5 @@ f00478b11a32714678f0f7b25086bc943517c2f1 data/alaricmod/loot_tables/blocks/sapph
 4ed2c0d5b7d9171e23e6b949ad310cd703c4999a data/alaricmod/loot_tables/blocks/sapphire_wall.json
 4bead0c33ea6865847eb5f852591350a1078105c data/alaricmod/loot_tables/blocks/sound_block.json
 d53adbb33eda4b04fcab4df9904e229aa795e767 data/alaricmod/loot_tables/blocks/strawberry_crop.json
+03e11ada15dec945aa35188f61b2b5901472e318 data/alaricmod/loot_tables/blocks/stripped_pine_log.json
+bffa5f9e589d8ad78f02031ec1871caa6869c57c data/alaricmod/loot_tables/blocks/stripped_pine_wood.json

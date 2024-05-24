@@ -56,6 +56,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
 
+        this.dropSelf(ModBlocks.PINE_LOG.get());
+        this.dropSelf(ModBlocks.PINE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PINE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_PINE_WOOD.get());
+        this.dropSelf(ModBlocks.PINE_PLANKS.get());
+        this.add(ModBlocks.PINE_LEAVES.get(),
+                block -> createLeavesDrops(block, ModBlocks.SAPPHIRE_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES) // TODO: Change to / Add Pine sapling
+        );
+
     }
 
     @Override
