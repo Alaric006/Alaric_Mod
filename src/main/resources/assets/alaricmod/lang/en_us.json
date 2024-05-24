@@ -46,6 +46,8 @@
   "block.alaricmod.pine_wood": "Pine Wood",
   "block.alaricmod.stripped_pine_wood": "Stripped Pine Wood",
   "block.alaricmod.pine_planks": "Pine Planks",
+  "block.alaricmod.pine_sign": "Pine Sign",
+  "block.alaricmod.pine_hanging_sign": "Pine Hanging Sign",
   "block.alaricmod.pine_leaves": "Pine Leaves",
 
   "entity.minecraft.villager.alaricmod.sound_master": "Sound Master",

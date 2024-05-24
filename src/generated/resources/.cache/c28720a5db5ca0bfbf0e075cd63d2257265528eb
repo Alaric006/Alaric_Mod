@@ -1,10 +1,12 @@
-// 1.20.1	2024-05-20T15:54:14.2150876	Item Models: alaricmod
+// 1.20.1	2024-05-24T18:20:56.7646485	Item Models: alaricmod
 39ec50e6fcf6771f1a15b717085d97532af68191 assets/alaricmod/models/item/bar_brawl_music_disc.json
 239fbd16c8395e6664bd26838d1322003899a964 assets/alaricmod/models/item/catmint.json
 59f43eca90e7dd2fadc4d8903f71fb733d55357b assets/alaricmod/models/item/corn.json
 e00b944542445e07372a85b462a999e0fbff31f5 assets/alaricmod/models/item/corn_seeds.json
 c65d78e216df10607ccf692422be059ed591a373 assets/alaricmod/models/item/metal_detector.json
 0a927b43724f14256cb8f7d482c0c560402fd51c assets/alaricmod/models/item/pine_cone.json
+43f19720a40e6ec3a953e6442fff849430cebeec assets/alaricmod/models/item/pine_hanging_sign.json
+fa2806789f683e1d1d7e8b114336627ee3b2811b assets/alaricmod/models/item/pine_sign.json
 1eb5f907c3e3e305b0d448b668c7881f9f9e8ea0 assets/alaricmod/models/item/raw_sapphire.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/alaricmod/models/item/rhino_spawn_egg.json
 cefc61661a82dc0eb51ccb3ecc67fdfe25c206b6 assets/alaricmod/models/item/sapphire.json
