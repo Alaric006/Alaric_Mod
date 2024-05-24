@@ -1,6 +1,8 @@
 package net.alaricj.alaricmod.event;
 
 import net.alaricj.alaricmod.TutorialMod;
+import net.alaricj.alaricmod.block.entity.ModBlockEntities;
+import net.alaricj.alaricmod.block.entity.renderer.GemPolishingBlockEntityRenderer;
 import net.alaricj.alaricmod.entity.client.ModModelLayers;
 import net.alaricj.alaricmod.entity.client.RhinoModel;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,5 +17,8 @@ public class ModEventBusClientEvents {
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.RHINO_LAYER, RhinoModel::createBodyLayer);
     }
-
+    @SubscribeEvent
+    public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.GEM_POLISHING_STATION_BE.get(), GemPolishingBlockEntityRenderer::new);
+    }
 }
