@@ -45,6 +45,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.PINE_PLANKS.get());
                         output.accept(ModItems.PINE_SIGN.get());
+                        output.accept(ModItems.PINE_BOAT.get());
+                        output.accept(ModItems.PINE_CHEST_BOAT.get());
                         output.accept(ModItems.PINE_HANGING_SIGN.get());
                         output.accept(ModBlocks.PINE_LEAVES.get());
 

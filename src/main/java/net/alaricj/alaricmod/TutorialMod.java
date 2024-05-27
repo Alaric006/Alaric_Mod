@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.block.entity.ModBlockEntities;
 import net.alaricj.alaricmod.entity.ModEntities;
+import net.alaricj.alaricmod.entity.client.ModBoatRenderer;
 import net.alaricj.alaricmod.entity.client.RhinoRenderer;
 import net.alaricj.alaricmod.item.ModCreativeModeTabs;
 import net.alaricj.alaricmod.item.ModItems;
@@ -102,7 +103,11 @@ public class TutorialMod
             Sheets.addWoodType(ModWoodTypes.PINE);
 
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+            EntityRenderers.register(ModEntities.MOD_BOAT.get(), pContext -> new ModBoatRenderer(pContext, false));
+            EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), pContext -> new ModBoatRenderer(pContext, true));
+
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
+
         }
     }
 }

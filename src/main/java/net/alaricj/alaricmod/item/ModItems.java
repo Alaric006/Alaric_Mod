@@ -3,9 +3,11 @@ package net.alaricj.alaricmod.item;
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.entity.ModEntities;
+import net.alaricj.alaricmod.entity.custom.ModBoatEntity;
 import net.alaricj.alaricmod.entity.custom.RhinoEntity;
 import net.alaricj.alaricmod.item.custom.FuelItem;
 import net.alaricj.alaricmod.item.custom.MetalDetectorItem;
+import net.alaricj.alaricmod.item.custom.ModBoatItem;
 import net.alaricj.alaricmod.item.custom.ModToolTiers;
 import net.alaricj.alaricmod.sound.ModSounds;
 import net.minecraft.world.item.*;
@@ -61,6 +63,11 @@ public class ModItems {
             () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.PINE_SIGN.get(), ModBlocks.PINE_WALL_SIGN.get()));
     public static final RegistryObject<Item> PINE_HANGING_SIGN = ITEMS.register("pine_hanging_sign",
             () -> new HangingSignItem(ModBlocks.PINE_HANGING_SIGN.get(), ModBlocks.PINE_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> PINE_BOAT = ITEMS.register("pine_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> PINE_CHEST_BOAT = ITEMS.register("pine_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
 
 
 

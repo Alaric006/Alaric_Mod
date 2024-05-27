@@ -24,6 +24,8 @@
   "item.alaricmod.bar_brawl_music_disc": "Bar Brawl Music Disc",
   "item.alaricmod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
   "item.alaricmod.rhino_spawn_egg": "Rhino Spawn Egg",
+  "item.alaricmod.pine_boat": "Pine Boat",
+  "item.alaricmod.pine_chest_boat": "Pine Chest Boat",
 
   "block.alaricmod.sapphire_block": "Block of Sapphire",
   "block.alaricmod.raw_sapphire_block": "Block of Raw Sapphire",
@@ -51,6 +53,7 @@
   "block.alaricmod.pine_leaves": "Pine Leaves",
 
   "entity.minecraft.villager.alaricmod.sound_master": "Sound Master",
+  "entity.alaricmod.mod_chest_boat": "Boat with Chest",
 
   "creative_tab.tutorial_tab": "Sapphire Tutorial Tab",
   "tooltip.alaricmod.metal_detector.tooltip": "Finds valuables underground!",

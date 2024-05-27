@@ -82,6 +82,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.PINE_SIGN);
         simpleItem(ModItems.PINE_HANGING_SIGN);
+        simpleItem(ModItems.PINE_BOAT);
+        simpleItem(ModItems.PINE_CHEST_BOAT);
 
     }
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
