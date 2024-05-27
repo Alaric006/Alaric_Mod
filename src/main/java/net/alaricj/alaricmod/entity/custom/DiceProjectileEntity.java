@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 
@@ -32,7 +33,11 @@ public class DiceProjectileEntity extends ThrowableItemProjectile {
     protected void onHitBlock(BlockHitResult pResult) {
         if(!this.level().isClientSide()) {
             this.level().broadcastEntityEvent(this,((byte) 3));
-            this.level().setBlock(blockPosition(), ((DiceBlock) ModBlocks.DICE_BLOCK.get()).getRandomBlockState(), 3);
+            if(level().getBlockState(blockPosition().above(-1)).is(Blocks.AIR)) {
+                this.level().setBlock(blockPosition().above(-1), ((DiceBlock) ModBlocks.DICE_BLOCK.get()).getRandomBlockState(), 3);
+            } else {
+                this.level().setBlock(blockPosition(), ((DiceBlock) ModBlocks.DICE_BLOCK.get()).getRandomBlockState(), 3);
+            }
         }
         this.discard();
         super.onHitBlock(pResult);
