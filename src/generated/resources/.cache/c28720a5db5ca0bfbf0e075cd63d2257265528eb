@@ -1,8 +1,9 @@
-// 1.20.1	2024-05-25T13:01:28.9324977	Item Models: alaricmod
+// 1.20.1	2024-05-27T17:39:20.1017386	Item Models: alaricmod
 39ec50e6fcf6771f1a15b717085d97532af68191 assets/alaricmod/models/item/bar_brawl_music_disc.json
 239fbd16c8395e6664bd26838d1322003899a964 assets/alaricmod/models/item/catmint.json
 59f43eca90e7dd2fadc4d8903f71fb733d55357b assets/alaricmod/models/item/corn.json
 e00b944542445e07372a85b462a999e0fbff31f5 assets/alaricmod/models/item/corn_seeds.json
+9b14b4fd42d659a6cefacb8b3e0735e7565b692e assets/alaricmod/models/item/dice.json
 c65d78e216df10607ccf692422be059ed591a373 assets/alaricmod/models/item/metal_detector.json
 9041322bbf5e345efb2657fc9e5355f73c0179ff assets/alaricmod/models/item/pine_boat.json
 2bf1cd6c44064775a90c355a34c13ff4f991a7ce assets/alaricmod/models/item/pine_chest_boat.json

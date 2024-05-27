@@ -56,6 +56,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CORN.get());
                         output.accept(ModBlocks.CATMINT.get());
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+                        output.accept(ModItems.DICE.get());
                         output.accept(ModItems.SAPPHIRE_SWORD.get());
                         output.accept(ModItems.SAPPHIRE_PICKAXE.get());
                         output.accept(ModItems.SAPPHIRE_AXE.get());
