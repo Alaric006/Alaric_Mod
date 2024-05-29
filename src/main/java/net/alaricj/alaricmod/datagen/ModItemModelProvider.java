@@ -86,6 +86,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PINE_CHEST_BOAT);
         simpleItem(ModItems.DICE);
 
+        saplingItem(ModBlocks.PINE_SAPLING);
+
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(TutorialMod.MOD_ID,"block/" + item.getId().getPath()));
     }
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
         final String MOD_ID = TutorialMod.MOD_ID; // Change this to your mod id

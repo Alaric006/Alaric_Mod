@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-24T18:20:56.762653	Block States: alaricmod
+// 1.20.1	2024-05-29T17:39:08.1526344	Block States: alaricmod
 8c8bfcdc72fe53a918eaddc26bdfc4a079a9cca8 assets/alaricmod/blockstates/catmint.json
 dc3e7afe9010c7000d8f5047db195f19c101e5f6 assets/alaricmod/blockstates/corn_crop.json
 9551096e36c348c8e9ab967d08f6e5c522f1b24d assets/alaricmod/blockstates/deepslate_sapphire_ore.json
@@ -7,6 +7,7 @@ bccc9cf2f51e31b44b00a1a639826b09251d057c assets/alaricmod/blockstates/gem_polish
 901292ac48652ba2ce4a4c293f5e0f8254d8146e assets/alaricmod/blockstates/pine_leaves.json
 018336a3292a536f24199b7b2a7fdae938796ceb assets/alaricmod/blockstates/pine_log.json
 3959cfc9a2fd7e7d95e206313b700ae73d922bcb assets/alaricmod/blockstates/pine_planks.json
+25d49ba7858578b1d925c8976d3980fc084d4cee assets/alaricmod/blockstates/pine_sapling.json
 3d5e9606002fa88435ace1e1db70bc109ffe7a99 assets/alaricmod/blockstates/pine_sign.json
 2af58413112f1aab28767eaa0e2c3e8207ae4a04 assets/alaricmod/blockstates/pine_wall_hanging_sign.json
 3d5e9606002fa88435ace1e1db70bc109ffe7a99 assets/alaricmod/blockstates/pine_wall_sign.json
@@ -44,6 +45,7 @@ e9dde495ef14742d139e7bbf33df3d4593109454 assets/alaricmod/models/block/pine_leav
 880b10de723897fe531d9a9728162af47dfcd88c assets/alaricmod/models/block/pine_log.json
 576dddd64cfcd3a2a01cfd2e0d647b991b922de1 assets/alaricmod/models/block/pine_log_horizontal.json
 36c5d6e1f881df9a74cba1b763dac10ff3801143 assets/alaricmod/models/block/pine_planks.json
+8127e9ac0657f04540e9a0d3401467a43de66f33 assets/alaricmod/models/block/pine_sapling.json
 dba3a065f273616aaa87a0ebc6487481655cfeb4 assets/alaricmod/models/block/pine_sign.json
 50b408b39c7c81f4bcce983a2512a75d7c007d08 assets/alaricmod/models/block/pine_wood.json
 ab4ca4c421655d65ec51bae3b6c24aca3226e7b0 assets/alaricmod/models/block/pine_wood_horizontal.json
