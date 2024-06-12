@@ -1,8 +1,10 @@
 package net.alaricj.alaricmod.sound;
 
 import net.alaricj.alaricmod.TutorialMod;
+import net.minecraft.client.sounds.MusicManager;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.common.util.ForgeSoundType;
 import net.minecraftforge.eventbus.api.IEventBus;

@@ -16,6 +16,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SAPPHIRE_ORE = registerKey("add_sapphire_ore");
 
+    public static final ResourceKey<BiomeModifier> ADD_TREE_PINE = registerKey("add_tree_pine");
+
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
@@ -28,6 +30,15 @@ public class ModBiomeModifiers {
                         GenerationStep.Decoration.UNDERGROUND_ORES
                         )
                 );
+
+        context.register(
+                ADD_TREE_PINE,
+                new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                        biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                        HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PINE_PLACED_KEY)),
+                        GenerationStep.Decoration.VEGETAL_DECORATION
+                )
+        );
     }
     public static ResourceKey<BiomeModifier> registerKey(String name) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(TutorialMod.MOD_ID, name));
