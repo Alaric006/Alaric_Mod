@@ -1,9 +1,10 @@
-// 1.20.1	2024-05-29T17:39:08.1526344	Item Models: alaricmod
+// 1.20.1	2024-06-13T16:51:56.8093162	Item Models: alaricmod
 39ec50e6fcf6771f1a15b717085d97532af68191 assets/alaricmod/models/item/bar_brawl_music_disc.json
 239fbd16c8395e6664bd26838d1322003899a964 assets/alaricmod/models/item/catmint.json
 59f43eca90e7dd2fadc4d8903f71fb733d55357b assets/alaricmod/models/item/corn.json
 e00b944542445e07372a85b462a999e0fbff31f5 assets/alaricmod/models/item/corn_seeds.json
 9b14b4fd42d659a6cefacb8b3e0735e7565b692e assets/alaricmod/models/item/dice.json
+4eba28f14361086d2fd1fe1d45ae2f1c92f6f5da assets/alaricmod/models/item/lucidite_door.json
 c65d78e216df10607ccf692422be059ed591a373 assets/alaricmod/models/item/metal_detector.json
 9041322bbf5e345efb2657fc9e5355f73c0179ff assets/alaricmod/models/item/pine_boat.json
 2bf1cd6c44064775a90c355a34c13ff4f991a7ce assets/alaricmod/models/item/pine_chest_boat.json
@@ -38,7 +39,6 @@ baf2622c67d4ebf7d85c534c4e1014f1da2fa8d5 assets/alaricmod/models/item/sapphire_c
 2398cb8c85b9b15282b431dc99fe299d39d84b5d assets/alaricmod/models/item/sapphire_chestplate_netherite_trim.json
 635cf7ad5a30b9cac985f151648487113e9a251f assets/alaricmod/models/item/sapphire_chestplate_quartz_trim.json
 1ff2d768b5e98a200f3cf58640374c2ff0d3b971 assets/alaricmod/models/item/sapphire_chestplate_redstone_trim.json
-717fa35e2bf3403548158ee857448d5ee356ff55 assets/alaricmod/models/item/sapphire_door.json
 9b05e2f117e551f519021ed15d1481825ba62a53 assets/alaricmod/models/item/sapphire_fence.json
 a71b6c85f5b5875448c689de1a7b1c0a38266c0a assets/alaricmod/models/item/sapphire_fence_gate.json
 b38faaba90b6cf28c83b0a896785e433e1d38ebd assets/alaricmod/models/item/sapphire_helmet.json

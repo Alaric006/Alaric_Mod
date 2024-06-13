@@ -30,7 +30,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SAPPHIRE_FENCE.get());
                         output.accept(ModBlocks.SAPPHIRE_FENCE_GATE.get());
                         output.accept(ModBlocks.SAPPHIRE_WALL.get());
-                        output.accept(ModBlocks.SAPPHIRE_DOOR.get());
+                        output.accept(ModBlocks.LUCIDITE_DOOR.get());
                         output.accept(ModBlocks.SAPPHIRE_TRAPDOOR.get());
                         output.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
                         output.accept(ModBlocks.SOUND_BLOCK.get());

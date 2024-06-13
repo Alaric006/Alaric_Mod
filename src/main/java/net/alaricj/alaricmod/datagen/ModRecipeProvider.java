@@ -31,6 +31,7 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
         oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
+        doorRecipe(ModBlocks.LUCIDITE_DOOR, ModItems.SAPPHIRE, pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
                 .pattern("SSS")
@@ -91,5 +92,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('L', logBlock.get())
                 .unlockedBy(getHasName(logBlock.get()), has(logBlock.get()))
                 .save(pWriter, TutorialMod.MOD_ID + ":" + getItemName(woodBlock.get()) + "_from_" + getItemName(logBlock.get()));
+    }
+    protected static void doorRecipe(RegistryObject<Block> doorBlock, RegistryObject<? extends ItemLike> doorMaterial, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, doorMaterial.get(), 3)
+                .pattern("LL")
+                .pattern("LL")
+                .pattern("LL")
+                .define('L', doorMaterial.get())
+                .unlockedBy(getHasName(doorMaterial.get()), has(doorMaterial.get()))
+                .save(pWriter, TutorialMod.MOD_ID + ":" + getItemName(doorBlock.get()) + "_from_" + getItemName(doorMaterial.get()));
     }
 }

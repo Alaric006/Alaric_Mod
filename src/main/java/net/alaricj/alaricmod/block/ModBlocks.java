@@ -44,8 +44,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SAPPHIRE_WALL = registerBlock("sapphire_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> SAPPHIRE_DOOR = registerBlock("sapphire_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.ACACIA));
+
+    public static final RegistryObject<Block> LUCIDITE_DOOR = registerBlock("lucidite_door",
+            () -> new LuciditeDoor(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.ACACIA));
+
     public static final RegistryObject<Block> SAPPHIRE_TRAPDOOR = registerBlock("sapphire_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.ACACIA));
     public static final RegistryObject<Block> SAPPHIRE_ORE =

@@ -30,6 +30,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.RAW_SAPPHIRE_BLOCK.get(),
                 ModBlocks.SOUND_BLOCK.get()
                 );
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
+                ModBlocks.LUCIDITE_DOOR.get()
+        );
         this.tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL).add(
                 ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()
         );
@@ -38,7 +41,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
                 ModBlocks.SAPPHIRE_BLOCK.get(),
                 ModBlocks.RAW_SAPPHIRE_BLOCK.get(),
-                ModBlocks.SOUND_BLOCK.get()
+                ModBlocks.SOUND_BLOCK.get(),
+                ModBlocks.LUCIDITE_DOOR.get()
         );
         this.tag(BlockTags.FENCES).add(
                 ModBlocks.SAPPHIRE_FENCE.get()
