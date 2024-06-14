@@ -3,8 +3,6 @@ package net.alaricj.alaricmod.datagen;
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.item.ModItems;
-import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.critereon.TradeTrigger;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -12,7 +10,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Iterator;
@@ -21,7 +18,7 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider {
 
-    private static final List<ItemLike> SAPPHIRE_SMELTABLES = List.of(ModItems.RAW_SAPPHIRE.get(), ModBlocks.SAPPHIRE_ORE.get(), ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+    private static final List<ItemLike> LUCIDITE_SMELTABLES = List.of(ModItems.RAW_SAPPHIRE.get(), ModBlocks.LUCIDITE_ORE.get(), ModBlocks.DEEPSLATE_LUCIDITE_ORE.get());
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -29,8 +26,8 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.LUCIDITE.get(), 0.25f, 100, "sapphire");
-        oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.LUCIDITE.get(), 0.25f, 200, "sapphire");
+        oreBlasting(pWriter, LUCIDITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUCIDITE.get(), 0.25f, 100, "sapphire");
+        oreSmelting(pWriter, LUCIDITE_SMELTABLES, RecipeCategory.MISC, ModItems.LUCIDITE.get(), 0.25f, 200, "sapphire");
         doorRecipe(ModBlocks.LUCIDITE_DOOR, ModItems.LUCIDITE,1, pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())

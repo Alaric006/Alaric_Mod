@@ -50,11 +50,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SAPPHIRE_TRAPDOOR = registerBlock("sapphire_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.ACACIA));
-    public static final RegistryObject<Block> SAPPHIRE_ORE =
-            registerBlock("sapphire_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2.5f),
+    public static final RegistryObject<Block> LUCIDITE_ORE =
+            registerBlock("lucidite_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2.5f),
                     UniformInt.of(3, 5)));
-    public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE =
-            registerBlock("deepslate_sapphire_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(3.0f),
+    public static final RegistryObject<Block> DEEPSLATE_LUCIDITE_ORE =
+            registerBlock("lucidite_deepslate_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(3.0f),
                     UniformInt.of(3, 5)));
     public static final RegistryObject<Block> SOUND_BLOCK =
             registerBlock("sound_block", () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSounds.SOUND_BLOCKS_SOUNDS)));

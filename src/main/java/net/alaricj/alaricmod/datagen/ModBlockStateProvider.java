@@ -39,8 +39,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType((DoorBlock) ModBlocks.LUCIDITE_DOOR.get(), modLoc("block/lucidite_door_bottom"), modLoc("block/lucidite_door_top"), "cutout");
         trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.SAPPHIRE_TRAPDOOR.get(), modLoc("block/sapphire_trapdoor"), true, "cutout");
 
-        blockWithItem(ModBlocks.SAPPHIRE_ORE);
-        blockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
+        blockWithItem(ModBlocks.LUCIDITE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_LUCIDITE_ORE);
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
 

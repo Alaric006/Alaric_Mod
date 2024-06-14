@@ -14,7 +14,7 @@ import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModBiomeModifiers {
-    public static final ResourceKey<BiomeModifier> ADD_SAPPHIRE_ORE = registerKey("add_sapphire_ore");
+    public static final ResourceKey<BiomeModifier> ADD_LUCIDITE_ORE = registerKey("add_lucidite_ore");
 
     public static final ResourceKey<BiomeModifier> ADD_TREE_PINE = registerKey("add_tree_pine");
 
@@ -23,10 +23,10 @@ public class ModBiomeModifiers {
         var biomes = context.lookup(Registries.BIOME);
 
         context.register(
-                ADD_SAPPHIRE_ORE,
+                ADD_LUCIDITE_ORE,
                 new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                        HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SAPPHIRE_ORE_PLACED_KEY)),
+                        HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.LUCIDITE_ORE_PLACED_KEY)),
                         GenerationStep.Decoration.UNDERGROUND_ORES
                         )
                 );

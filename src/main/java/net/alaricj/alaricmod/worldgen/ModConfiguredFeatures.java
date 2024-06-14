@@ -32,7 +32,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_LUCIDITE_ORE_KEY = registerKey("lucidite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_SAPPHIRE_ORE_KEY = registerKey("nether_sapphire_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_SAPPHIRE_ORE_KEY = registerKey("end_sapphire_ore");
 
@@ -44,10 +44,10 @@ public class ModConfiguredFeatures {
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
-        List<OreConfiguration.TargetBlockState> overworldSapphireOres = List.of(OreConfiguration.target(stoneReplaceables, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepSlateReplaceables, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> overworldLuciditeOres = List.of(OreConfiguration.target(stoneReplaceables, ModBlocks.LUCIDITE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepSlateReplaceables, ModBlocks.DEEPSLATE_LUCIDITE_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSapphireOres, 9));
+        register(context, OVERWORLD_LUCIDITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldLuciditeOres, 9));
 
         register(context, PINE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.PINE_LOG.get()),

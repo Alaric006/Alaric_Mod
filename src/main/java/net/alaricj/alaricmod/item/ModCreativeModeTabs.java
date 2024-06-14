@@ -34,8 +34,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SAPPHIRE_TRAPDOOR.get());
                         output.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
                         output.accept(ModBlocks.SOUND_BLOCK.get());
-                        output.accept(ModBlocks.SAPPHIRE_ORE.get());
-                        output.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+                        output.accept(ModBlocks.LUCIDITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_LUCIDITE_ORE.get());
                         output.accept(ModBlocks.GEM_POLISHING_STATION.get());
 
                         output.accept(ModBlocks.PINE_LOG.get());
