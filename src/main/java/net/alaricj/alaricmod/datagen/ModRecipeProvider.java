@@ -29,9 +29,9 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
-        oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
-        doorRecipe(ModBlocks.LUCIDITE_DOOR, ModItems.SAPPHIRE, pWriter);
+        oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.LUCIDITE.get(), 0.25f, 100, "sapphire");
+        oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.LUCIDITE.get(), 0.25f, 200, "sapphire");
+        doorRecipe(ModBlocks.LUCIDITE_DOOR, ModItems.LUCIDITE,1, pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
                 .pattern("SSS")
@@ -94,7 +94,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(pWriter, TutorialMod.MOD_ID + ":" + getItemName(woodBlock.get()) + "_from_" + getItemName(logBlock.get()));
     }
     protected static void doorRecipe(RegistryObject<Block> doorBlock, RegistryObject<? extends ItemLike> doorMaterial, Consumer<FinishedRecipe> pWriter) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, doorMaterial.get(), 3)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, doorBlock.get(), 3)
+                .pattern("LL")
+                .pattern("LL")
+                .pattern("LL")
+                .define('L', doorMaterial.get())
+                .unlockedBy(getHasName(doorMaterial.get()), has(doorMaterial.get()))
+                .save(pWriter, TutorialMod.MOD_ID + ":" + getItemName(doorBlock.get()) + "_from_" + getItemName(doorMaterial.get()));
+    }
+    protected static void doorRecipe(RegistryObject<Block> doorBlock, RegistryObject<? extends ItemLike> doorMaterial, int itemCount, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, doorBlock.get(), itemCount)
                 .pattern("LL")
                 .pattern("LL")
                 .pattern("LL")

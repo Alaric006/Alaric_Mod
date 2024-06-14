@@ -42,7 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.RAW_SAPPHIRE);
-        simpleItem(ModItems.SAPPHIRE);
+        simpleItem(ModItems.LUCIDITE);
 
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.STRAWBERRY);
@@ -72,11 +72,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SAPPHIRE_AXE);
         handheldItem(ModItems.SAPPHIRE_SHOVEL);
         handheldItem(ModItems.SAPPHIRE_HOE);
-
-        trimmedArmorItem(ModItems.SAPPHIRE_HELMET);
-        trimmedArmorItem(ModItems.SAPPHIRE_CHESTPLATE);
-        trimmedArmorItem(ModItems.SAPPHIRE_LEGGINGS);
-        trimmedArmorItem(ModItems.SAPPHIRE_BOOTS);
 
         withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 

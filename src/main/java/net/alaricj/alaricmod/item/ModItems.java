@@ -19,6 +19,7 @@ public class ModItems {
             = DeferredRegister.create(ForgeRegistries.ITEMS, TutorialMod.MOD_ID);
 
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LUCIDITE = ITEMS.register("lucidite", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> RAW_SAPPHIRE = ITEMS.register("raw_sapphire", () -> new Item(new Item.Properties()));
 
@@ -38,14 +39,6 @@ public class ModItems {
             1, 1, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SAPPHIRE_HOE = ITEMS.register("sapphire_hoe", () -> new HoeItem(ModToolTiers.SAPPHIRE,
             0, 0, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> SAPPHIRE_HELMET = ITEMS.register("sapphire_helmet", () -> new ArmorItem(ModArmorMaterials.SAPPHIRE,
-            ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> SAPPHIRE_CHESTPLATE = ITEMS.register("sapphire_chestplate", () -> new ArmorItem(ModArmorMaterials.SAPPHIRE,
-            ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> SAPPHIRE_LEGGINGS= ITEMS.register("sapphire_leggings", () -> new ArmorItem(ModArmorMaterials.SAPPHIRE,
-            ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots", () -> new ArmorItem(ModArmorMaterials.SAPPHIRE,
-            ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds", () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
     public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds", () -> new ItemNameBlockItem(ModBlocks.CORN_CROP.get(), new Item.Properties()));

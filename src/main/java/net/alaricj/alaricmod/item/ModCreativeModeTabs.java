@@ -14,10 +14,10 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TutorialMod.MOD_ID);
     public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.LUCIDITE.get()))
                     .title(Component.translatable("creative_tab.tutorial_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.SAPPHIRE.get());
+                        output.accept(ModItems.LUCIDITE.get());
                         output.accept(ModItems.RAW_SAPPHIRE.get());
                         output.accept(ModItems.PINE_CONE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
@@ -64,11 +64,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SAPPHIRE_SHOVEL.get());
                         output.accept(ModItems.SAPPHIRE_HOE.get());
                         output.accept(ModBlocks.MOD_PORTAL.get());
-
-                        output.accept(ModItems.SAPPHIRE_HELMET.get());
-                        output.accept(ModItems.SAPPHIRE_CHESTPLATE.get());
-                        output.accept(ModItems.SAPPHIRE_LEGGINGS.get());
-                        output.accept(ModItems.SAPPHIRE_BOOTS.get());
 
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
                     })

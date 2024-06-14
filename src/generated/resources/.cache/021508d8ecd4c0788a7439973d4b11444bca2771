@@ -1,7 +1,6 @@
-// 1.20.1	2024-05-24T17:07:52.0371702	Tags for minecraft:item mod id alaricmod
+// 1.20.1	2024-06-14T14:16:26.9125881	Tags for minecraft:item mod id alaricmod
 73d3b141828d762f015791d69a87882eb4e42430 data/minecraft/tags/items/creeper_drop_music_discs.json
 37b95b3e1d78dc8167d5ac487311d7f0466c90ae data/minecraft/tags/items/leaves.json
 fc32cac0969013584bb18951b47a580cbae6b8a0 data/minecraft/tags/items/logs.json
 73d3b141828d762f015791d69a87882eb4e42430 data/minecraft/tags/items/music_discs.json
 f2d48330aeb202cbb67b9f17d61408a040138fae data/minecraft/tags/items/planks.json
-4814044e685adc399399a95b3ad30c705d296485 data/minecraft/tags/items/trimmable_armor.json
