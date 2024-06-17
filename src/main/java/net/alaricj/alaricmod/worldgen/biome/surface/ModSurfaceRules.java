@@ -1,9 +1,14 @@
 package net.alaricj.alaricmod.worldgen.biome.surface;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.worldgen.biome.ModBiomes;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraftforge.common.world.BiomeModifier;
+
+import java.util.List;
 
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
@@ -16,7 +21,6 @@ public class ModSurfaceRules {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
-
         return SurfaceRules.sequence(
                 SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.TEST_BIOME),
                                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, RAW_SAPPHIRE)),
@@ -31,4 +35,5 @@ public class ModSurfaceRules {
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());
     }
+
 }

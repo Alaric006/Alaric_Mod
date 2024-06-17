@@ -3,10 +3,12 @@ package net.alaricj.alaricmod.worldgen.dimension;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.realmsclient.util.LevelType;
 import net.alaricj.alaricmod.TutorialMod;
+import net.alaricj.alaricmod.worldgen.ModNoiseGeneratorSettings;
 import net.alaricj.alaricmod.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -18,6 +20,7 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
+import net.minecraft.world.level.levelgen.NoiseSettings;
 
 import java.util.List;
 import java.util.OptionalLong;
@@ -70,9 +73,10 @@ public class ModDimensions {
                                         Climate.parameters(0.4F, 0.3F, 0.2F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.DARK_FOREST))
 
                         ))),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+                noiseGenSettings.getOrThrow(ModNoiseGeneratorSettings.DREAMLAND));
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.ALARIC_DIM_TYPE), noiseBasedChunkGenerator);
+
 
         context.register(ALARIC_DIM_KEY, stem);
     }
