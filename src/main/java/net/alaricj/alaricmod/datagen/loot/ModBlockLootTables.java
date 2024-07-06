@@ -25,6 +25,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
+        this.dropSelf(ModBlocks.DREAMLAND_DIRT.get());
+        this.dropSelf(ModBlocks.DEPLETED_DREAMLAND_DIRT.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());
         this.createOreDrop(ModBlocks.LUCIDITE_ORE.get(), ModItems.LUCIDITE.get());
         this.add(ModBlocks.LUCIDITE_ORE.get(),

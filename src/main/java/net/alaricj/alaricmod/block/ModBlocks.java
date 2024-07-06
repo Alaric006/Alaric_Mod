@@ -48,6 +48,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> LUCIDITE_DOOR = registerBlock("lucidite_door",
             () -> new LuciditeDoor(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion().lightLevel(LuciditeDoor::getLightLevel), BlockSetType.ACACIA));
 
+    public static final RegistryObject<Block> DREAMLAND_DIRT = registerBlock("dreamland_dirt",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.SOUL_SAND)));
+
+    public static final RegistryObject<Block> DEPLETED_DREAMLAND_DIRT = registerBlock("depleted_dreamland_dirt",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.SOUL_SAND)));
+
     public static final RegistryObject<Block> SAPPHIRE_TRAPDOOR = registerBlock("sapphire_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.ACACIA));
     public static final RegistryObject<Block> LUCIDITE_ORE =

@@ -1,6 +1,8 @@
-// 1.20.1	2024-06-14T14:40:49.5207929	Loot Tables
+// 1.20.1	2024-07-06T17:19:47.2980578	Loot Tables
 2ada294334f7d8d618fb035bf6762ed43b929c06 data/alaricmod/loot_tables/blocks/catmint.json
 5a21e56afc4dc87e421ef9b141d1b99b9f28f824 data/alaricmod/loot_tables/blocks/corn_crop.json
+9618a0040a79d0adb4a50fa63e1c1e4daadec456 data/alaricmod/loot_tables/blocks/depleted_dreamland_dirt.json
+ac25ce72b8b520de21c3e6787ce1cb254b2e3fb0 data/alaricmod/loot_tables/blocks/dreamland_dirt.json
 2e071e38f87909641eb3f0aa6f6ccc5fd64b886d data/alaricmod/loot_tables/blocks/gem_polishing_station.json
 a2b1d3c69d6b2c27fbe53ee76aedbd253c6c3ef4 data/alaricmod/loot_tables/blocks/lucidite_deepslate_ore.json
 840a41ce4ac9495eea67567b3ecbf236968c6e00 data/alaricmod/loot_tables/blocks/lucidite_door.json
