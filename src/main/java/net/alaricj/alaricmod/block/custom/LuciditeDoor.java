@@ -11,17 +11,23 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class LuciditeDoor extends DoorBlock {
 
+    public static final BooleanProperty CAN_TELEPORT_TO_DREAMLAND = BooleanProperty.create("can_teleport_to_dreamland");
+
     public LuciditeDoor(Properties pProperties, BlockSetType pType) {
         super(pProperties, pType);
+        this.registerDefaultState(this.defaultBlockState().setValue(CAN_TELEPORT_TO_DREAMLAND, true));
     }
 
     @Override
@@ -35,8 +41,9 @@ public class LuciditeDoor extends DoorBlock {
     }
 
     public static int getLightLevel(BlockState doorBlockState) {
-        return doorBlockState.getValue(BlockStateProperties.LIT) ? 1 : 0;
+        return getCanTeleportToDreamland(doorBlockState) ? 4 : 0;
     }
+
 
 
     private void handleKaupenPortal(Entity player, BlockPos pPos) {
@@ -54,5 +61,14 @@ public class LuciditeDoor extends DoorBlock {
                 }
             }
         }
+    }
+    public static boolean getCanTeleportToDreamland(BlockState pBlockState) {
+        return pBlockState.getValue(CAN_TELEPORT_TO_DREAMLAND); //TODO: Make CAN_TELEPORT_TO_DREAMLAND depend on time
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        super.createBlockStateDefinition(pBuilder);
+        pBuilder.add(CAN_TELEPORT_TO_DREAMLAND);
     }
 }
