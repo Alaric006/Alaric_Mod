@@ -25,8 +25,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
+
         this.dropSelf(ModBlocks.DREAMLAND_DIRT.get());
         this.dropSelf(ModBlocks.DEPLETED_DREAMLAND_DIRT.get());
+
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());
         this.createOreDrop(ModBlocks.LUCIDITE_ORE.get(), ModItems.LUCIDITE.get());
         this.add(ModBlocks.LUCIDITE_ORE.get(),
@@ -44,6 +46,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.SAPPHIRE_SLAB.get(), block -> createSlabItemTable(ModBlocks.SAPPHIRE_SLAB.get()));
         this.add(ModBlocks.LUCIDITE_DOOR.get(), block -> createDoorTable(ModBlocks.LUCIDITE_DOOR.get()));
+        //TODO: Add loot table for DREAM_GLASS having a rare change to drop dream shard
 
         LootItemCondition.Builder strawberryCropConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCropBlock.AGE, 5));

@@ -36,6 +36,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SOUND_BLOCK.get());
                         output.accept(ModBlocks.LUCIDITE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_LUCIDITE_ORE.get());
+                        output.accept(ModBlocks.DREAMLAND_DIRT.get());
+                        output.accept(ModBlocks.DEPLETED_DREAMLAND_DIRT.get());
+                        output.accept(ModBlocks.DREAM_GLASS.get());
                         output.accept(ModBlocks.GEM_POLISHING_STATION.get());
 
                         output.accept(ModBlocks.PINE_LOG.get());

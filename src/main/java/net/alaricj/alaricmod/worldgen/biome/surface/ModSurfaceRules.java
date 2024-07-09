@@ -1,20 +1,15 @@
 package net.alaricj.alaricmod.worldgen.biome.surface;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.worldgen.biome.ModBiomes;
-import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraftforge.common.world.BiomeModifier;
-
-import java.util.List;
 
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-    private static final SurfaceRules.RuleSource SAPPHIRE = makeStateRule(ModBlocks.SAPPHIRE_BLOCK.get());
-    private static final SurfaceRules.RuleSource RAW_SAPPHIRE = makeStateRule(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
+    private static final SurfaceRules.RuleSource DREAMLAND_DIRT = makeStateRule(ModBlocks.DREAMLAND_DIRT.get());
+    private static final SurfaceRules.RuleSource DEPLETED_DREAMLAND_DIRT = makeStateRule(ModBlocks.DEPLETED_DREAMLAND_DIRT.get());
 
 
     public static SurfaceRules.RuleSource makeRules() {
@@ -22,9 +17,9 @@ public class ModSurfaceRules {
 
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
         return SurfaceRules.sequence(
-                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.TEST_BIOME),
-                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, RAW_SAPPHIRE)),
-                        SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SAPPHIRE)),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CLIFFS_OF_ASPIRATION),
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, DEPLETED_DREAMLAND_DIRT)),
+                        SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, DREAMLAND_DIRT)),
 
 
                 // Default to a grass and dirt surface

@@ -18,10 +18,10 @@ import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModBiomes {
-    public static final ResourceKey<Biome> TEST_BIOME = ResourceKey.create(Registries.BIOME, new ResourceLocation(TutorialMod.MOD_ID, "test_biome"));
+    public static final ResourceKey<Biome> CLIFFS_OF_ASPIRATION = ResourceKey.create(Registries.BIOME, new ResourceLocation(TutorialMod.MOD_ID, "aspiration_cliffs"));
 
     public static void bootstrap(BootstapContext<Biome> context) {
-        context.register(TEST_BIOME, testBiome(context), Lifecycle.stable());
+        context.register(CLIFFS_OF_ASPIRATION, aspirationCliffs(context), Lifecycle.stable());
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -33,7 +33,7 @@ public class ModBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
-    public static Biome testBiome(BootstapContext<Biome> context) {
+    public static Biome aspirationCliffs(BootstapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.RHINO.get(), 2, 3, 5));
 

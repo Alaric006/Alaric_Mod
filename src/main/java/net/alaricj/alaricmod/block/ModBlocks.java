@@ -54,6 +54,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEPLETED_DREAMLAND_DIRT = registerBlock("depleted_dreamland_dirt",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.SOUL_SAND)));
 
+    public static final RegistryObject<Block> DREAM_GLASS = registerBlock("dream_glass",
+            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS).sound(SoundType.GLASS).noLootTable().noOcclusion()));
+
     public static final RegistryObject<Block> SAPPHIRE_TRAPDOOR = registerBlock("sapphire_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.ACACIA));
     public static final RegistryObject<Block> LUCIDITE_ORE =
