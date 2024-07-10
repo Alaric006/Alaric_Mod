@@ -30,6 +30,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.RAW_SAPPHIRE_BLOCK);
         blockWithItem(ModBlocks.DREAMLAND_DIRT);
         blockWithItem(ModBlocks.DEPLETED_DREAMLAND_DIRT);
+        logBlock(((RotatedPillarBlock) ModBlocks.LILURID_LOG.get()));
+        blockItem(ModBlocks.LILURID_LOG);
         blockWithItem(ModBlocks.DREAM_GLASS);
 
         stairsBlock((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get(), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));

@@ -35,7 +35,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModBlocks.PINE_LOG.get().asItem(),
                 ModBlocks.STRIPPED_PINE_LOG.get().asItem(),
                 ModBlocks.PINE_WOOD.get().asItem(),
-                ModBlocks.STRIPPED_PINE_WOOD.get().asItem());
+                ModBlocks.STRIPPED_PINE_WOOD.get().asItem(),
+                ModBlocks.LILURID_LOG.get().asItem());
         this.tag(ItemTags.PLANKS).add(
                 ModBlocks.PINE_PLANKS.get().asItem()
         );

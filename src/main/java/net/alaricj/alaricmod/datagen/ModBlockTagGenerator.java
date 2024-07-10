@@ -55,7 +55,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.PINE_LOG.get(),
                 ModBlocks.STRIPPED_PINE_LOG.get(),
                 ModBlocks.PINE_WOOD.get(),
-                ModBlocks.STRIPPED_PINE_WOOD.get());
+                ModBlocks.STRIPPED_PINE_WOOD.get(),
+                ModBlocks.LILURID_LOG.get());
 
         this.tag(BlockTags.PLANKS).add(
                 ModBlocks.PINE_PLANKS.get()
