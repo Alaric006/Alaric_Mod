@@ -17,6 +17,7 @@ import net.alaricj.alaricmod.sound.ModSounds;
 import net.alaricj.alaricmod.util.ModWoodTypes;
 import net.alaricj.alaricmod.villager.ModVillagers;
 import net.alaricj.alaricmod.worldgen.biome.surface.ModSurfaceRules;
+import net.alaricj.alaricmod.worldgen.custom.ModFeature;
 import net.alaricj.alaricmod.worldgen.tree.ModFoliagePlacers;
 import net.alaricj.alaricmod.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -61,6 +62,7 @@ public class TutorialMod
         ModEntities.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModFeature.register(modEventBus);
         ModSounds.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);

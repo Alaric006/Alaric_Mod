@@ -12,15 +12,19 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LUCIDITE_ORE_PLACED_KEY = registerKey("sapphire_ore_placed");
     public static final ResourceKey<PlacedFeature> PINE_PLACED_KEY = registerKey("pine_placed");
+
+    public static final ResourceKey<PlacedFeature> DREAM_SPIRE_MEDIUM_PLACED_KEY = registerKey("dream_spire_medium_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -29,6 +33,9 @@ public class ModPlacedFeatures {
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
         register(context, PINE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PINE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.PINE_SAPLING.get()));
+        register(context, DREAM_SPIRE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_SPIRE_MEDIUM_KEY),
+                ModDreamSpirePlacement.mediumDreamSpirePlacement());
+
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(TutorialMod.MOD_ID, name));

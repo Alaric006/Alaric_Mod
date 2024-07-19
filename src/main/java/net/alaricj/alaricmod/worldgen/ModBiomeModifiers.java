@@ -18,6 +18,7 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_TREE_PINE = registerKey("add_tree_pine");
 
+
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);

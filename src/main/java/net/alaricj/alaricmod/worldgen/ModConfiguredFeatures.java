@@ -2,8 +2,12 @@ package net.alaricj.alaricmod.worldgen;
 
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration;
+import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireFeature;
+import net.alaricj.alaricmod.worldgen.custom.ModFeature;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineFoliagePlacer;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineTrunkPlacer;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -12,6 +16,7 @@ import net.minecraft.sounds.Musics;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -38,11 +43,14 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_KEY = registerKey("pine");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DREAM_SPIRE_MEDIUM_KEY = registerKey("dream_spire_medium");
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepSlateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
+        HolderGetter<Feature<?>> features = context.lookup(Registries.FEATURE);
 
         List<OreConfiguration.TargetBlockState> overworldLuciditeOres = List.of(OreConfiguration.target(stoneReplaceables, ModBlocks.LUCIDITE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepSlateReplaceables, ModBlocks.DEEPSLATE_LUCIDITE_ORE.get().defaultBlockState()));
@@ -55,6 +63,9 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.PINE_LEAVES.get()),
                 new PineFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, DREAM_SPIRE_MEDIUM_KEY, ModFeature.DREAM_SPIRE_MEDIUM_FEATURE.get(),
+                new MediumDreamSpireConfiguration(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get().defaultBlockState())));
 
     }
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -57,6 +57,7 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.PINE_PLACED_KEY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, ModPlacedFeatures.DREAM_SPIRE_MEDIUM_PLACED_KEY);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)

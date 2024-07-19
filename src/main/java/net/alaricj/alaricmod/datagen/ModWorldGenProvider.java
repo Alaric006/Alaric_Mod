@@ -6,6 +6,7 @@ import net.alaricj.alaricmod.worldgen.ModConfiguredFeatures;
 import net.alaricj.alaricmod.worldgen.ModNoiseGeneratorSettings;
 import net.alaricj.alaricmod.worldgen.ModPlacedFeatures;
 import net.alaricj.alaricmod.worldgen.biome.ModBiomes;
+import net.alaricj.alaricmod.worldgen.custom.ModFeature;
 import net.alaricj.alaricmod.worldgen.dimension.ModDimensions;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
