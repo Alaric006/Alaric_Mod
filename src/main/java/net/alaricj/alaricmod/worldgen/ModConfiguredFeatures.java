@@ -65,7 +65,10 @@ public class ModConfiguredFeatures {
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
         register(context, DREAM_SPIRE_MEDIUM_KEY, ModFeature.DREAM_SPIRE_MEDIUM_FEATURE.get(),
-                new MediumDreamSpireConfiguration(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get().defaultBlockState())));
+                new MediumDreamSpireConfiguration(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get().defaultBlockState()),
+                        10,
+                        5
+                ));
 
     }
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

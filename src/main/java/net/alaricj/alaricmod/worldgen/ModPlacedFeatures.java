@@ -1,5 +1,6 @@
 package net.alaricj.alaricmod.worldgen;
 
+import com.google.common.collect.ImmutableList;
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.minecraft.core.Holder;
@@ -12,10 +13,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
@@ -34,8 +32,16 @@ public class ModPlacedFeatures {
         register(context, PINE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PINE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.PINE_SAPLING.get()));
         register(context, DREAM_SPIRE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_SPIRE_MEDIUM_KEY),
-                ModDreamSpirePlacement.mediumDreamSpirePlacement());
+                mediumDreamSpirePlacement(45));
+    }
 
+    public static List<PlacementModifier> mediumDreamSpirePlacement(int rarity) {
+        return ImmutableList.<PlacementModifier>builder()
+                .add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE)
+                .add(BiomeFilter.biome())
+                .add(RarityFilter.onAverageOnceEvery(rarity))
+                .add(InSquarePlacement.spread())
+                .build();
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(TutorialMod.MOD_ID, name));
