@@ -7,23 +7,58 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 
 public class MediumDreamSpireConfiguration implements FeatureConfiguration {
     public final BlockStateProvider blockPlacer;
-    public final int spireHeight;
 
-    //Width of the central square to each spire "row"
-    public final int spireCoreWidth;
+    MediumDreamSpireGrower dreamSpireGrower;
+
     public static final Codec<MediumDreamSpireConfiguration> CODEC = RecordCodecBuilder.create((getter) -> {
         return getter.group(BlockStateProvider.CODEC.fieldOf("block_placer").forGetter( (getter1) -> {
             return getter1.blockPlacer;
-        }), Codec.INT.fieldOf("spire_height").forGetter( (getter2) -> {
-            return getter2.spireHeight;
-        }), Codec.INT.fieldOf("spire_core_width").forGetter( (getter3) -> {
-            return getter3.spireCoreWidth;
+        }), MediumDreamSpireGrower.CODEC.fieldOf("dream_spire_grower").forGetter( (getter2) -> {
+            return getter2.dreamSpireGrower;
         })).apply(getter, MediumDreamSpireConfiguration::new);
     });
 
-    public MediumDreamSpireConfiguration(BlockStateProvider blockPlacer, int spireHeight, int spireCoreWidth) {
+    public MediumDreamSpireConfiguration(BlockStateProvider blockPlacer, MediumDreamSpireGrower dreamSpireGrower) {
         this.blockPlacer = blockPlacer;
-        this.spireHeight = spireHeight;
-        this.spireCoreWidth = spireCoreWidth;
+        this.dreamSpireGrower = dreamSpireGrower;
+    }
+    public static class MediumDreamSpireGrower {
+        public final int spireHeight;
+        //Percent of height above which to reduce spire layer width
+        public final float initialSlimmingHeightPercent;
+
+        //How much to reduce layer width by per vertical block height above initialSlimmingHeight
+        public final float slimmingFactor;
+
+        //Width of the central square to each spire "row"
+        public final int spireCoreWidth;
+        //Horizontal randomness in spire generation
+        public final int horizontalLayerOffsetRandomness;
+
+        public final int layerHeight;
+        public static Codec<MediumDreamSpireGrower> CODEC = RecordCodecBuilder.create((initialGetter) -> {
+            return initialGetter.group(Codec.INT.fieldOf("spire_height").forGetter((getter) -> {
+                return getter.spireHeight;
+            }), Codec.FLOAT.fieldOf("initial_slimming_height_percent").forGetter( (getter) -> {
+                return getter.initialSlimmingHeightPercent;
+            }), Codec.FLOAT.fieldOf("slimming_factor").forGetter( (getter) -> {
+                return getter.slimmingFactor;
+            }), Codec.INT.fieldOf("spire_core_width").forGetter( (getter) -> {
+                return getter.spireCoreWidth;
+            }), Codec.INT.fieldOf("horizontal_layer_offset_randomness").forGetter((getter) -> {
+                return getter.horizontalLayerOffsetRandomness;
+            }), Codec.INT.fieldOf("layer_height").forGetter((getter) -> {
+                return getter.layerHeight;
+            })).apply(initialGetter, MediumDreamSpireGrower::new);
+        });
+
+        public MediumDreamSpireGrower(int spireHeight, float initialSlimmingHeightPercent, float slimmingFactor, int spireCoreWidth, int horizontalLayerOffsetRandomness, int layerHeight) {
+            this.spireHeight = spireHeight;
+            this.initialSlimmingHeightPercent = initialSlimmingHeightPercent;
+            this.slimmingFactor = slimmingFactor;
+            this.spireCoreWidth = spireCoreWidth;
+            this.horizontalLayerOffsetRandomness = horizontalLayerOffsetRandomness;
+            this.layerHeight = layerHeight;
+        }
     }
 }

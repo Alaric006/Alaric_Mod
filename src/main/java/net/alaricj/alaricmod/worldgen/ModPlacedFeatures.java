@@ -32,7 +32,7 @@ public class ModPlacedFeatures {
         register(context, PINE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PINE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.PINE_SAPLING.get()));
         register(context, DREAM_SPIRE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_SPIRE_MEDIUM_KEY),
-                mediumDreamSpirePlacement(45));
+                mediumDreamSpirePlacement(25));
     }
 
     public static List<PlacementModifier> mediumDreamSpirePlacement(int rarity) {

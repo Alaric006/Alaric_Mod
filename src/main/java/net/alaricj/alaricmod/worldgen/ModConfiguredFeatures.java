@@ -64,10 +64,18 @@ public class ModConfiguredFeatures {
                 new PineFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
+        final MediumDreamSpireConfiguration.MediumDreamSpireGrower dreamSpireGrower = new MediumDreamSpireConfiguration.MediumDreamSpireGrower(
+                50,
+                0.5f,
+                0.2f,
+                12,
+                2,
+                2
+        );
+
         register(context, DREAM_SPIRE_MEDIUM_KEY, ModFeature.DREAM_SPIRE_MEDIUM_FEATURE.get(),
                 new MediumDreamSpireConfiguration(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get().defaultBlockState()),
-                        10,
-                        5
+                        dreamSpireGrower
                 ));
 
     }

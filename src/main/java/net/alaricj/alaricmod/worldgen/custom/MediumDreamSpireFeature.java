@@ -23,18 +23,33 @@ public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfigurati
         WorldGenLevel worldLevel = pContext.level();
         RandomSource randomSource = pContext.random();
         MediumDreamSpireConfiguration config = pContext.config();
+        MediumDreamSpireConfiguration.MediumDreamSpireGrower dreamSpireGrower = config.dreamSpireGrower;
+        int northDisplacement = 0;
+        int eastDisplacement = 0;
+        float layerWidth = (float) dreamSpireGrower.spireCoreWidth;
         //Build spire from top to bottom, row by row
-        for(int i = -4; i < config.spireHeight; i++) {
-            placeSpireLayer(pPos.above(i), config.blockPlacer, config.spireCoreWidth, randomSource, worldLevel);
+        for(int i = -4; i < dreamSpireGrower.spireHeight; i += dreamSpireGrower.layerHeight) {
+            //If layer y pos above initialSlimmingHeight reduce next layer width by slimming factor, adjusting for layerHeight
+            int initialSlimmingHeight = (int) dreamSpireGrower.initialSlimmingHeightPercent * dreamSpireGrower.spireHeight;
+            if(i >= initialSlimmingHeight) {
+                layerWidth -= dreamSpireGrower.layerHeight * dreamSpireGrower.slimmingFactor;
+            }
+            //Place next spire layer with added displacements
+            placeSpireLayer(pPos.above(i).north(northDisplacement).east(eastDisplacement), config.blockPlacer, (int) layerWidth, dreamSpireGrower.layerHeight, randomSource, worldLevel);
+            //Update displacements for next layer
+            northDisplacement += randomSource.nextInt(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
+            eastDisplacement += randomSource.nextInt(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
         }
         return true;
     }
-    //Places on spire
-    private void placeSpireLayer(BlockPos anchorBlockPos, BlockStateProvider blockPlacer, int coreWidth, RandomSource randomSource, WorldGenLevel worldLevel) {
-        for(int x = 0; x < coreWidth + 2; x++) {
-            for(int z = 0; z < coreWidth + 2; z++) {
-                if(!(x == 0 && (z == 0 || z == coreWidth + 1) || x == coreWidth + 1 && (z == 0 || z == coreWidth + 1))) {
-                    tryPlaceBlock(anchorBlockPos.east(x).north(z), blockPlacer, randomSource, worldLevel);
+    //Places spire layer
+    private void placeSpireLayer(BlockPos anchorBlockPos, BlockStateProvider blockPlacer, int coreWidth, int layerHeight, RandomSource randomSource, WorldGenLevel worldLevel) {
+        for(int y = 0; y < layerHeight; y++) {
+            for (int x = 0; x < coreWidth + 2; x++) {
+                for (int z = 0; z < coreWidth + 2; z++) {
+                    if (!(x == 0 && (z == 0 || z == coreWidth + 1) || x == coreWidth + 1 && (z == 0 || z == coreWidth + 1))) {
+                        tryPlaceBlock(anchorBlockPos.east(x).north(z).above(y), blockPlacer, randomSource, worldLevel);
+                    }
                 }
             }
         }
