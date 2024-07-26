@@ -34,11 +34,18 @@ public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfigurati
             if(i >= initialSlimmingHeight) {
                 layerWidth -= dreamSpireGrower.layerHeight * dreamSpireGrower.slimmingFactor;
             }
-            //Place next spire layer with added displacements
-            placeSpireLayer(pPos.above(i).north(northDisplacement).east(eastDisplacement), config.blockPlacer, (int) layerWidth, dreamSpireGrower.layerHeight, randomSource, worldLevel);
+
+            //Place next spire layer with added displacements. If extraBaseLayers > 0, add extra layers as well
+            int extraLayerNorthDisplacement = 0;
+            int extraLayerEastDisplacement = 0;
+            for(int layerCounter = 0; layerCounter < ((i < dreamSpireGrower.spireHeight * dreamSpireGrower.initialSlimmingHeightPercent) ? dreamSpireGrower.extraBaseLayers + 1 : 1); layerCounter++) {
+                placeSpireLayer(pPos.above(i).north(northDisplacement + extraLayerNorthDisplacement).east(eastDisplacement + extraLayerEastDisplacement), config.blockPlacer, (int) layerWidth, dreamSpireGrower.layerHeight, randomSource, worldLevel);
+                extraLayerEastDisplacement = randomSource.nextIntBetweenInclusive(-dreamSpireGrower.extraLayerOffsetRandomness, dreamSpireGrower.extraLayerOffsetRandomness);
+                extraLayerNorthDisplacement = randomSource.nextIntBetweenInclusive(-dreamSpireGrower.extraLayerOffsetRandomness, dreamSpireGrower.extraLayerOffsetRandomness);
+            }
             //Update displacements for next layer
-            northDisplacement += randomSource.nextInt(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
-            eastDisplacement += randomSource.nextInt(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
+            northDisplacement += randomSource.nextIntBetweenInclusive(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
+            eastDisplacement += randomSource.nextIntBetweenInclusive(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
         }
         return true;
     }

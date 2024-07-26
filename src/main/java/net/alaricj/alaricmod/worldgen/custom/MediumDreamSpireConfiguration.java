@@ -36,6 +36,12 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
         public final int horizontalLayerOffsetRandomness;
 
         public final int layerHeight;
+
+        //How many extra layers should be placed in the base of spire (below slimming height)
+        public final int extraBaseLayers;
+
+        //Percent of horizontalLayerOffsetRandomness to apply to extra layers
+        public final int extraLayerOffsetRandomness;
         public static Codec<MediumDreamSpireGrower> CODEC = RecordCodecBuilder.create((initialGetter) -> {
             return initialGetter.group(Codec.INT.fieldOf("spire_height").forGetter((getter) -> {
                 return getter.spireHeight;
@@ -49,16 +55,22 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
                 return getter.horizontalLayerOffsetRandomness;
             }), Codec.INT.fieldOf("layer_height").forGetter((getter) -> {
                 return getter.layerHeight;
+            }), Codec.INT.fieldOf("extra_base_layers").forGetter((getter) -> {
+                return getter.extraBaseLayers;
+            }), Codec.INT.fieldOf("extra_layer_offset_randomness_percent").forGetter( (getter) -> {
+                return getter.extraLayerOffsetRandomness;
             })).apply(initialGetter, MediumDreamSpireGrower::new);
         });
 
-        public MediumDreamSpireGrower(int spireHeight, float initialSlimmingHeightPercent, float slimmingFactor, int spireCoreWidth, int horizontalLayerOffsetRandomness, int layerHeight) {
+        public MediumDreamSpireGrower(int spireHeight, float initialSlimmingHeightPercent, float slimmingFactor, int spireCoreWidth, int horizontalLayerOffsetRandomness, int layerHeight, int extraBaseLayers, int extraLayerOffsetRandomness) {
             this.spireHeight = spireHeight;
             this.initialSlimmingHeightPercent = initialSlimmingHeightPercent;
             this.slimmingFactor = slimmingFactor;
             this.spireCoreWidth = spireCoreWidth;
             this.horizontalLayerOffsetRandomness = horizontalLayerOffsetRandomness;
             this.layerHeight = layerHeight;
+            this.extraBaseLayers = extraBaseLayers;
+            this.extraLayerOffsetRandomness = extraLayerOffsetRandomness;
         }
     }
 }

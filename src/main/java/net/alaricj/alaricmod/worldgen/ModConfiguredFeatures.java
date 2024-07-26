@@ -3,7 +3,6 @@ package net.alaricj.alaricmod.worldgen;
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration;
-import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireFeature;
 import net.alaricj.alaricmod.worldgen.custom.ModFeature;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineFoliagePlacer;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineTrunkPlacer;
@@ -12,27 +11,19 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.Musics;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.featuresize.FeatureSize;
-import net.minecraft.world.level.levelgen.feature.featuresize.FeatureSizeType;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
@@ -70,7 +61,9 @@ public class ModConfiguredFeatures {
                 0.2f,
                 12,
                 2,
-                2
+                2,
+                2,
+                1
         );
 
         register(context, DREAM_SPIRE_MEDIUM_KEY, ModFeature.DREAM_SPIRE_MEDIUM_FEATURE.get(),
