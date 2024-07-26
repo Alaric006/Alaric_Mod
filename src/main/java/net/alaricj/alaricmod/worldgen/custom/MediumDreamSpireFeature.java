@@ -12,6 +12,8 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
+import java.util.function.Function;
+
 public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfiguration> {
     public MediumDreamSpireFeature(Codec<MediumDreamSpireConfiguration> codec) {
         super(codec);
@@ -39,7 +41,13 @@ public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfigurati
             int extraLayerNorthDisplacement = 0;
             int extraLayerEastDisplacement = 0;
             for(int layerCounter = 0; layerCounter < ((i < dreamSpireGrower.spireHeight * dreamSpireGrower.initialSlimmingHeightPercent) ? dreamSpireGrower.extraBaseLayers + 1 : 1); layerCounter++) {
-                placeSpireLayer(pPos.above(i).north(northDisplacement + extraLayerNorthDisplacement).east(eastDisplacement + extraLayerEastDisplacement), config.blockPlacer, (int) layerWidth, dreamSpireGrower.layerHeight, randomSource, worldLevel);
+                //Calculate if ore can be placed at current spire layer height
+                boolean canPlaceOre = i > dreamSpireGrower.oreSpawnHeightPercent * dreamSpireGrower.spireHeight;
+
+                //Place each spire
+                placeSpireLayer(pPos.above(i).north(northDisplacement + extraLayerNorthDisplacement).east(eastDisplacement + extraLayerEastDisplacement),
+                        config.blockPlacer, config.specialOreProvider, (int) layerWidth, dreamSpireGrower.layerHeight,
+                        canPlaceOre, randomSource, dreamSpireGrower, worldLevel);
                 extraLayerEastDisplacement = randomSource.nextIntBetweenInclusive(-dreamSpireGrower.extraLayerOffsetRandomness, dreamSpireGrower.extraLayerOffsetRandomness);
                 extraLayerNorthDisplacement = randomSource.nextIntBetweenInclusive(-dreamSpireGrower.extraLayerOffsetRandomness, dreamSpireGrower.extraLayerOffsetRandomness);
             }
@@ -49,20 +57,23 @@ public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfigurati
         }
         return true;
     }
+
     //Places spire layer
-    private void placeSpireLayer(BlockPos anchorBlockPos, BlockStateProvider blockPlacer, int coreWidth, int layerHeight, RandomSource randomSource, WorldGenLevel worldLevel) {
+    private void placeSpireLayer(BlockPos anchorBlockPos, BlockStateProvider blockPlacer, BlockStateProvider specialOrePlacer, int coreWidth, int layerHeight, boolean canPlaceOre, RandomSource randomSource, MediumDreamSpireConfiguration.MediumDreamSpireGrower dreamSpireGrower, WorldGenLevel worldLevel) {
         for(int y = 0; y < layerHeight; y++) {
             for (int x = 0; x < coreWidth + 2; x++) {
                 for (int z = 0; z < coreWidth + 2; z++) {
                     if (!(x == 0 && (z == 0 || z == coreWidth + 1) || x == coreWidth + 1 && (z == 0 || z == coreWidth + 1))) {
-                        tryPlaceBlock(anchorBlockPos.east(x).north(z).above(y), blockPlacer, randomSource, worldLevel);
+                        boolean placeSpecialOre = x > 1 && x < coreWidth + 1 && z > 1 && z < coreWidth + 1 && canPlaceOre && randomSource.nextFloat() < dreamSpireGrower.oreSpawnChance;
+                            tryPlaceBlock(anchorBlockPos.east(x).north(z).above(y),
+                                    placeSpecialOre ? specialOrePlacer : blockPlacer,
+                                    randomSource, worldLevel);
+                        }
                     }
                 }
             }
         }
-    }
-
-    private void tryPlaceBlock(BlockPos blockPos, BlockStateProvider blockStateProvider, RandomSource randomSource, WorldGenLevel level) {
+        private void tryPlaceBlock(BlockPos blockPos, BlockStateProvider blockStateProvider, RandomSource randomSource, WorldGenLevel level) {
         if(level.getBlockState(blockPos) == Blocks.AIR.defaultBlockState()) {
             level.setBlock(blockPos, blockStateProvider.getState(randomSource, blockPos), 4);
         }

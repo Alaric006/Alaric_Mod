@@ -63,13 +63,15 @@ public class ModConfiguredFeatures {
                 2,
                 2,
                 2,
-                1
+                1,
+                0.6f,
+                0.03f
         );
 
         register(context, DREAM_SPIRE_MEDIUM_KEY, ModFeature.DREAM_SPIRE_MEDIUM_FEATURE.get(),
                 new MediumDreamSpireConfiguration(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get().defaultBlockState()),
-                        dreamSpireGrower
-                ));
+                        BlockStateProvider.simple(ModBlocks.LUCIDITE_ORE.get().defaultBlockState()),
+                        dreamSpireGrower));
 
     }
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

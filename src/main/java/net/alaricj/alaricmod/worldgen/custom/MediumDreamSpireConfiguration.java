@@ -8,18 +8,23 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 public class MediumDreamSpireConfiguration implements FeatureConfiguration {
     public final BlockStateProvider blockPlacer;
 
+    public final BlockStateProvider specialOreProvider;
+
     MediumDreamSpireGrower dreamSpireGrower;
 
     public static final Codec<MediumDreamSpireConfiguration> CODEC = RecordCodecBuilder.create((getter) -> {
         return getter.group(BlockStateProvider.CODEC.fieldOf("block_placer").forGetter( (getter1) -> {
             return getter1.blockPlacer;
+        }), BlockStateProvider.CODEC.fieldOf("special_ore_provider").forGetter( (getter1) -> {
+            return getter1.specialOreProvider;
         }), MediumDreamSpireGrower.CODEC.fieldOf("dream_spire_grower").forGetter( (getter2) -> {
             return getter2.dreamSpireGrower;
         })).apply(getter, MediumDreamSpireConfiguration::new);
     });
 
-    public MediumDreamSpireConfiguration(BlockStateProvider blockPlacer, MediumDreamSpireGrower dreamSpireGrower) {
+    public MediumDreamSpireConfiguration(BlockStateProvider blockPlacer, BlockStateProvider specialOreProvider, MediumDreamSpireGrower dreamSpireGrower) {
         this.blockPlacer = blockPlacer;
+        this.specialOreProvider = specialOreProvider;
         this.dreamSpireGrower = dreamSpireGrower;
     }
     public static class MediumDreamSpireGrower {
@@ -42,6 +47,13 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
 
         //Percent of horizontalLayerOffsetRandomness to apply to extra layers
         public final int extraLayerOffsetRandomness;
+
+        //Percent of total height above which to spawn ore / special blocks
+        public final float oreSpawnHeightPercent;
+
+        //How often to spawn special ore
+        public final float oreSpawnChance;
+
         public static Codec<MediumDreamSpireGrower> CODEC = RecordCodecBuilder.create((initialGetter) -> {
             return initialGetter.group(Codec.INT.fieldOf("spire_height").forGetter((getter) -> {
                 return getter.spireHeight;
@@ -59,10 +71,14 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
                 return getter.extraBaseLayers;
             }), Codec.INT.fieldOf("extra_layer_offset_randomness_percent").forGetter( (getter) -> {
                 return getter.extraLayerOffsetRandomness;
+            }), Codec.FLOAT.fieldOf("ore_spawn_height_percent").forGetter( (getter) -> {
+                return getter.oreSpawnHeightPercent;
+            }), Codec.FLOAT.fieldOf("ore_spawn_chance").forGetter( (getter) -> {
+                return getter.oreSpawnChance;
             })).apply(initialGetter, MediumDreamSpireGrower::new);
         });
 
-        public MediumDreamSpireGrower(int spireHeight, float initialSlimmingHeightPercent, float slimmingFactor, int spireCoreWidth, int horizontalLayerOffsetRandomness, int layerHeight, int extraBaseLayers, int extraLayerOffsetRandomness) {
+        public MediumDreamSpireGrower(int spireHeight, float initialSlimmingHeightPercent, float slimmingFactor, int spireCoreWidth, int horizontalLayerOffsetRandomness, int layerHeight, int extraBaseLayers, int extraLayerOffsetRandomness, float oreSpawnHeightPercent, float oreSpawnChance) {
             this.spireHeight = spireHeight;
             this.initialSlimmingHeightPercent = initialSlimmingHeightPercent;
             this.slimmingFactor = slimmingFactor;
@@ -71,6 +87,8 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
             this.layerHeight = layerHeight;
             this.extraBaseLayers = extraBaseLayers;
             this.extraLayerOffsetRandomness = extraLayerOffsetRandomness;
+            this.oreSpawnHeightPercent = oreSpawnHeightPercent;
+            this.oreSpawnChance = oreSpawnChance;
         }
     }
 }
