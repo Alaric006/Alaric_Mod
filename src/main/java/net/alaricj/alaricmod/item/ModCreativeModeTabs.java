@@ -40,6 +40,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DEPLETED_DREAMLAND_DIRT.get());
                         output.accept(ModBlocks.DREAM_GLASS.get());
                         output.accept(ModBlocks.LILURID_LOG.get());
+                        output.accept(ModBlocks.LILURID_SAPLING.get());
                         output.accept(ModBlocks.GEM_POLISHING_STATION.get());
 
                         output.accept(ModBlocks.PINE_LOG.get());

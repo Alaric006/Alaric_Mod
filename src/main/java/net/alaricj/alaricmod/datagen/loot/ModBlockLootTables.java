@@ -29,6 +29,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.DREAMLAND_DIRT.get());
         this.dropSelf(ModBlocks.DEPLETED_DREAMLAND_DIRT.get());
         this.dropSelf(ModBlocks.LILURID_LOG.get());
+        this.dropSelf(ModBlocks.LILURID_SAPLING.get());
 
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());
         this.createOreDrop(ModBlocks.LUCIDITE_ORE.get(), ModItems.LUCIDITE.get());

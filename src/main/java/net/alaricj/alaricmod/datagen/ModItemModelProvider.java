@@ -82,6 +82,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DICE);
 
         saplingItem(ModBlocks.PINE_SAPLING);
+        saplingItem(ModBlocks.LILURID_SAPLING);
 
     }
 

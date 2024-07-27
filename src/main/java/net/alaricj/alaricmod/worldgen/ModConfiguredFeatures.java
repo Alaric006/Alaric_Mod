@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -20,7 +21,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -35,6 +38,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_KEY = registerKey("pine");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> DREAM_SPIRE_MEDIUM_KEY = registerKey("dream_spire_medium");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LILURID_TREE = registerKey("lilurid_tree");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -55,6 +60,8 @@ public class ModConfiguredFeatures {
                 new PineFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
+
+        //Create dreamSpireGrower for DreamSpireMediumConfiguration
         final MediumDreamSpireConfiguration.MediumDreamSpireGrower dreamSpireGrower = new MediumDreamSpireConfiguration.MediumDreamSpireGrower(
                 50,
                 0.5f,
@@ -72,7 +79,14 @@ public class ModConfiguredFeatures {
                 new MediumDreamSpireConfiguration(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get().defaultBlockState()),
                         BlockStateProvider.simple(ModBlocks.LUCIDITE_ORE.get().defaultBlockState()),
                         dreamSpireGrower));
-
+        //Add lilurid tree
+        //TODO: Play with tree configuration away from Azalea tree copied features
+        register(context, LILURID_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.LILURID_LOG.get()),
+                new BendingTrunkPlacer(4, 2, 0, 3, UniformInt.of(2, 3)),
+                BlockStateProvider.simple(ModBlocks.DREAM_GLASS.get()),
+                new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 50),
+                new TwoLayersFeatureSize(1, 0 ,1)).dirt(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get())).build());
     }
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(TutorialMod.MOD_ID, name));

@@ -24,6 +24,8 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> DREAM_SPIRE_MEDIUM_PLACED_KEY = registerKey("dream_spire_medium_placed");
 
+    public static final ResourceKey<PlacedFeature> LILURID_TREE_PLACED_KEY = registerKey("lilurid_tree_placed_key");
+
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         register(context, LUCIDITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_LUCIDITE_ORE_KEY),
@@ -33,6 +35,8 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.PINE_SAPLING.get()));
         register(context, DREAM_SPIRE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_SPIRE_MEDIUM_KEY),
                 mediumDreamSpirePlacement(25));
+        register(context, LILURID_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LILURID_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.LILURID_SAPLING.get()));
     }
 
     public static List<PlacementModifier> mediumDreamSpirePlacement(int rarity) {

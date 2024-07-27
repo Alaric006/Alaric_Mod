@@ -6,6 +6,7 @@ import net.alaricj.alaricmod.item.ModItems;
 import net.alaricj.alaricmod.sound.ModSounds;
 import net.alaricj.alaricmod.util.ModWoodTypes;
 import net.alaricj.alaricmod.worldgen.tree.PineTreeGrower;
+import net.alaricj.alaricmod.worldgen.tree.LiluridTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -143,6 +144,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOD_PORTAL = registerBlock("mod_portal",
             () -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noLootTable().noOcclusion().noCollission()));
 
+    public static final RegistryObject<Block> LILURID_SAPLING = registerBlock("lilurid_sapling",
+            () -> new LiluridSapling(new LiluridTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
 
