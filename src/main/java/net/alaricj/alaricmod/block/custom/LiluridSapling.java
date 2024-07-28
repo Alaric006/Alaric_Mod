@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 
-//TODO: Make sapling only placeable on dreamland dirt
 public class LiluridSapling extends SaplingBlock {
     public LiluridSapling(AbstractTreeGrower pTreeGrower, Properties pProperties) {
         super(pTreeGrower, pProperties);
@@ -17,5 +16,11 @@ public class LiluridSapling extends SaplingBlock {
     @Override
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return pState.is(ModBlocks.DREAMLAND_DIRT.get());
+    }
+
+    @Override
+    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+        BlockPos blockPos = pPos.below();
+        return pLevel.getBlockState(blockPos).is(ModBlocks.DREAMLAND_DIRT.get());
     }
 }
