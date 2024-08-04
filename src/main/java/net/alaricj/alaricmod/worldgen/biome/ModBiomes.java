@@ -69,10 +69,10 @@ public class ModBiomes {
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(0xe82e3b)
                         .waterFogColor(0xbf1b26)
-                        .skyColor(0x30c918)
+                        .skyColor(0x02FEF6)
                         .grassColorOverride(0x7f03fc)
                         .foliageColorOverride(0xd203fc)
-                        .fogColor(0x22a1e6)
+                        .fogColor(0x8A8AFB)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .backgroundMusic(Musics.createGameMusic(ModSounds.BAR_BRAWL.getHolder().get())).build())
                 .build();

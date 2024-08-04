@@ -2,12 +2,11 @@ package net.alaricj.alaricmod.datagen;
 
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.block.custom.ChangelingBushBlock;
 import net.alaricj.alaricmod.block.custom.CornCropBlock;
 import net.alaricj.alaricmod.block.custom.StrawberryCropBlock;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -18,6 +17,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
+
+import static net.alaricj.alaricmod.block.custom.ChangelingBushBlock.*;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output,ExistingFileHelper exFileHelper) {
@@ -34,6 +35,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.LILURID_LOG);
         blockWithItem(ModBlocks.DREAM_GLASS);
         saplingBlock(ModBlocks.LILURID_SAPLING);
+        makeChangelingBush(ModBlocks.CHANGELING_BUSH.get());
 
         stairsBlock((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get(), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
         slabBlock((SlabBlock) ModBlocks.SAPPHIRE_SLAB.get(), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
@@ -135,6 +137,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()),
                 new ResourceLocation(TutorialMod.MOD_ID, "block/" + textureName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()))).renderType("cutout"));
 
+        return models;
+    }
+
+    public void makeChangelingBush(Block block) {
+        Function<BlockState, ConfiguredModel[]> function = state -> changelingBushStates(state, (ChangelingBushBlock) block);
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] changelingBushStates(BlockState state, BushBlock bushBlock) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(state.getValue(BUSH_TYPE).getSerializedName() + "_stage" + state.getValue(AGE),
+                new ResourceLocation(TutorialMod.MOD_ID, "block/" + state.getValue(BUSH_TYPE).getSerializedName() + "_stage" + state.getValue(AGE))).renderType("cutout"));
         return models;
     }
     private ConfiguredModel[] cornStates(BlockState state, CropBlock block, String modelName, String textureName) {

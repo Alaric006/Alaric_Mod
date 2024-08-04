@@ -147,6 +147,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> LILURID_SAPLING = registerBlock("lilurid_sapling",
             () -> new LiluridSapling(new LiluridTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> CHANGELING_BUSH = BLOCKS.register("changeling_bush",
+            () -> new ChangelingBushBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).lightLevel(ChangelingBushBlock::getLightLevel)));
+
 
 
 

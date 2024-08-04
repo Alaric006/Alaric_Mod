@@ -2,9 +2,9 @@ package net.alaricj.alaricmod.item;
 
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.block.custom.ChangelingBushBlock;
 import net.alaricj.alaricmod.entity.ModEntities;
 import net.alaricj.alaricmod.entity.custom.ModBoatEntity;
-import net.alaricj.alaricmod.entity.custom.RhinoEntity;
 import net.alaricj.alaricmod.item.custom.*;
 import net.alaricj.alaricmod.sound.ModSounds;
 import net.minecraft.world.item.*;
@@ -59,6 +59,9 @@ public class ModItems {
     public static final RegistryObject<Item> PINE_CHEST_BOAT = ITEMS.register("pine_chest_boat",
             () -> new ModBoatItem(true, ModBoatEntity.Type.PINE, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> DICE = ITEMS.register("dice", () -> new DiceItem(new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> DREAM_BERRY  = ITEMS.register("dream_berry",
+            () -> new ChangelingBerry(ModBlocks.CHANGELING_BUSH.get(), ChangelingBushBlock.ChangelingBushType.DreamBush, new Item.Properties()));
 
 
 

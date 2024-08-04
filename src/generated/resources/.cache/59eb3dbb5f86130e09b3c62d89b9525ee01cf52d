@@ -1,5 +1,6 @@
-// 1.20.1	2024-07-27T14:05:03.3572576	Loot Tables
+// 1.20.1	2024-08-02T19:04:32.0120604	Loot Tables
 2ada294334f7d8d618fb035bf6762ed43b929c06 data/alaricmod/loot_tables/blocks/catmint.json
+3dc5eb5212158f880474a6091f909e7ca1122d2a data/alaricmod/loot_tables/blocks/changeling_bush.json
 5a21e56afc4dc87e421ef9b141d1b99b9f28f824 data/alaricmod/loot_tables/blocks/corn_crop.json
 9618a0040a79d0adb4a50fa63e1c1e4daadec456 data/alaricmod/loot_tables/blocks/depleted_dreamland_dirt.json
 ac25ce72b8b520de21c3e6787ce1cb254b2e3fb0 data/alaricmod/loot_tables/blocks/dreamland_dirt.json

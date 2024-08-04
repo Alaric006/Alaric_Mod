@@ -1,16 +1,19 @@
 package net.alaricj.alaricmod.datagen.loot;
 
 import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.block.custom.ChangelingBushBlock;
 import net.alaricj.alaricmod.block.custom.StrawberryCropBlock;
 import net.alaricj.alaricmod.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -78,6 +81,20 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.PINE_HANGING_SIGN.get(), block -> createSingleItemTable(ModBlocks.PINE_HANGING_SIGN.get()));
         this.add(ModBlocks.PINE_WALL_HANGING_SIGN.get(), block -> createSingleItemTable(ModBlocks.PINE_HANGING_SIGN.get()));
 
+
+        this.add(ModBlocks.CHANGELING_BUSH.get(), block -> createChangelingBushTable());
+
+
+    }
+
+    public LootTable.Builder createChangelingBushTable() {
+        LootTable.Builder lootTableBuilder = LootTable.lootTable();
+        for(ChangelingBushBlock.ChangelingBushType bushType : ChangelingBushBlock.ChangelingBushType.values()) {
+            LootItemCondition.Builder changelingBerryConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CHANGELING_BUSH.get())
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChangelingBushBlock.BUSH_TYPE, bushType));
+            lootTableBuilder.withPool(this.applyExplosionCondition(bushType.DropItem().get(), LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(bushType.DropItem().get()))).when(changelingBerryConditionBuilder));
+        }
+        return lootTableBuilder;
     }
 
     @Override
