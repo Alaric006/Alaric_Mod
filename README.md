@@ -12,6 +12,3 @@
     <li> Add lilurid planks, slabs, stairs, etc.</li>
     <li> Add ambient mob</li>
 </ul>
-<style> 
-
-</style>
