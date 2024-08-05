@@ -3,11 +3,7 @@ package net.alaricj.alaricmod.block.custom;
 import com.google.common.collect.Lists;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.item.ModItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.OutgoingChatMessage;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -37,8 +33,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.*;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static net.minecraftforge.common.ForgeHooks.onCropsGrowPost;
 import static net.minecraftforge.common.ForgeHooks.onCropsGrowPre;
