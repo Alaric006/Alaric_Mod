@@ -7,7 +7,7 @@
 <h3>Planned: 0.1A</h3>
 <ul>
     <li>Update Dream Spire generation </li>
-    <li> Potentially add water to Dream Spires</li>
+    <li> Potentially add lava like liquid pools onto biome surface floor</li>
     <li> Dream Heart ore</li>
     <li> Add lilurid planks, slabs, stairs, etc.</li>
     <li> Add ambient mob</li>
