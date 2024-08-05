@@ -36,7 +36,7 @@ public class ModPlacedFeatures {
         register(context, DREAM_SPIRE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_SPIRE_MEDIUM_KEY),
                 mediumDreamSpirePlacement(25));
         register(context, LILURID_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LILURID_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.LILURID_SAPLING.get()));
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(15, 0.1f, 1), ModBlocks.LILURID_SAPLING.get()));
     }
 
     public static List<PlacementModifier> mediumDreamSpirePlacement(int rarity) {
@@ -44,7 +44,7 @@ public class ModPlacedFeatures {
                 .add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE)
                 .add(BiomeFilter.biome())
                 .add(RarityFilter.onAverageOnceEvery(rarity))
-                .add(InSquarePlacement.spread())
+                .add(NoiseBasedCountPlacement.of(16, 10.0d, 0.0d))
                 .build();
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {

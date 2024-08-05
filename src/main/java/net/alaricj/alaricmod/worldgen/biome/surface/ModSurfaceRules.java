@@ -19,12 +19,11 @@ public class ModSurfaceRules {
         return SurfaceRules.sequence(
                 SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CLIFFS_OF_ASPIRATION),
                                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, DEPLETED_DREAMLAND_DIRT)),
-                        SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, DREAMLAND_DIRT)),
 
 
                 // Default to a grass and dirt surface
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
-        );
+        ));
     }
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {

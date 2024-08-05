@@ -3,6 +3,7 @@ package net.alaricj.alaricmod.worldgen;
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration;
+import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration.MediumDreamSpireGrower;
 import net.alaricj.alaricmod.worldgen.custom.ModFeature;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineFoliagePlacer;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineTrunkPlacer;
@@ -12,7 +13,9 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -60,13 +63,13 @@ public class ModConfiguredFeatures {
                 new PineFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
-
+        UniformInt spireSize = UniformInt.of(8, 16);
         //Create dreamSpireGrower for DreamSpireMediumConfiguration
         final MediumDreamSpireConfiguration.MediumDreamSpireGrower dreamSpireGrower = new MediumDreamSpireConfiguration.MediumDreamSpireGrower(
-                50,
+                UniformInt.of(60, 80),
                 0.5f,
                 0.2f,
-                12,
+                spireSize,
                 2,
                 2,
                 2,

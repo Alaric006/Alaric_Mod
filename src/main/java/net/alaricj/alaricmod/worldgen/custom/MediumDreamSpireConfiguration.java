@@ -2,6 +2,7 @@ package net.alaricj.alaricmod.worldgen.custom;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
@@ -28,7 +29,7 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
         this.dreamSpireGrower = dreamSpireGrower;
     }
     public static class MediumDreamSpireGrower {
-        public final int spireHeight;
+        public final IntProvider spireHeight;
         //Percent of height above which to reduce spire layer width
         public final float initialSlimmingHeightPercent;
 
@@ -36,7 +37,7 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
         public final float slimmingFactor;
 
         //Width of the central square to each spire "row"
-        public final int spireCoreWidth;
+        public final IntProvider spireCoreWidth;
         //Horizontal randomness in spire generation
         public final int horizontalLayerOffsetRandomness;
 
@@ -55,13 +56,13 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
         public final float oreSpawnChance;
 
         public static Codec<MediumDreamSpireGrower> CODEC = RecordCodecBuilder.create((initialGetter) -> {
-            return initialGetter.group(Codec.INT.fieldOf("spire_height").forGetter((getter) -> {
+            return initialGetter.group(IntProvider.CODEC.fieldOf("spire_height").forGetter((getter) -> {
                 return getter.spireHeight;
             }), Codec.FLOAT.fieldOf("initial_slimming_height_percent").forGetter( (getter) -> {
                 return getter.initialSlimmingHeightPercent;
             }), Codec.FLOAT.fieldOf("slimming_factor").forGetter( (getter) -> {
                 return getter.slimmingFactor;
-            }), Codec.INT.fieldOf("spire_core_width").forGetter( (getter) -> {
+            }), IntProvider.CODEC.fieldOf("spire_core_width").forGetter( (getter) -> {
                 return getter.spireCoreWidth;
             }), Codec.INT.fieldOf("horizontal_layer_offset_randomness").forGetter((getter) -> {
                 return getter.horizontalLayerOffsetRandomness;
@@ -78,7 +79,7 @@ public class MediumDreamSpireConfiguration implements FeatureConfiguration {
             })).apply(initialGetter, MediumDreamSpireGrower::new);
         });
 
-        public MediumDreamSpireGrower(int spireHeight, float initialSlimmingHeightPercent, float slimmingFactor, int spireCoreWidth, int horizontalLayerOffsetRandomness, int layerHeight, int extraBaseLayers, int extraLayerOffsetRandomness, float oreSpawnHeightPercent, float oreSpawnChance) {
+        public MediumDreamSpireGrower(IntProvider spireHeight, float initialSlimmingHeightPercent, float slimmingFactor, IntProvider spireCoreWidth, int horizontalLayerOffsetRandomness, int layerHeight, int extraBaseLayers, int extraLayerOffsetRandomness, float oreSpawnHeightPercent, float oreSpawnChance) {
             this.spireHeight = spireHeight;
             this.initialSlimmingHeightPercent = initialSlimmingHeightPercent;
             this.slimmingFactor = slimmingFactor;

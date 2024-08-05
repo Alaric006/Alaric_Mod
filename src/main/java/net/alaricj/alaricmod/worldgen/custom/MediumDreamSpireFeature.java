@@ -26,13 +26,16 @@ public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfigurati
         RandomSource randomSource = pContext.random();
         MediumDreamSpireConfiguration config = pContext.config();
         MediumDreamSpireConfiguration.MediumDreamSpireGrower dreamSpireGrower = config.dreamSpireGrower;
+        int directionModifierNorth = randomSource.nextIntBetweenInclusive(-1, 1);
+        int directionModifierEast = randomSource.nextIntBetweenInclusive(-1, 1);
         int northDisplacement = 0;
         int eastDisplacement = 0;
-        float layerWidth = (float) dreamSpireGrower.spireCoreWidth;
+        float layerWidth = (float) dreamSpireGrower.spireCoreWidth.sample(randomSource);
+        int spireHeight = (int) (((float) dreamSpireGrower.spireHeight.sample(randomSource)) * layerWidth / 16d);
         //Build spire from top to bottom, row by row
-        for(int i = -4; i < dreamSpireGrower.spireHeight; i += dreamSpireGrower.layerHeight) {
+        for(int i = -4; i < spireHeight; i += dreamSpireGrower.layerHeight) {
             //If layer y pos above initialSlimmingHeight reduce next layer width by slimming factor, adjusting for layerHeight
-            int initialSlimmingHeight = (int) dreamSpireGrower.initialSlimmingHeightPercent * dreamSpireGrower.spireHeight;
+            int initialSlimmingHeight = (int) dreamSpireGrower.initialSlimmingHeightPercent * spireHeight;
             if(i >= initialSlimmingHeight) {
                 layerWidth -= dreamSpireGrower.layerHeight * dreamSpireGrower.slimmingFactor;
             }
@@ -40,9 +43,9 @@ public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfigurati
             //Place next spire layer with added displacements. If extraBaseLayers > 0, add extra layers as well
             int extraLayerNorthDisplacement = 0;
             int extraLayerEastDisplacement = 0;
-            for(int layerCounter = 0; layerCounter < ((i < dreamSpireGrower.spireHeight * dreamSpireGrower.initialSlimmingHeightPercent) ? dreamSpireGrower.extraBaseLayers + 1 : 1); layerCounter++) {
+            for(int layerCounter = 0; layerCounter < ((i < spireHeight * dreamSpireGrower.initialSlimmingHeightPercent) ? dreamSpireGrower.extraBaseLayers + 1 : 1); layerCounter++) {
                 //Calculate if ore can be placed at current spire layer height
-                boolean canPlaceOre = i > dreamSpireGrower.oreSpawnHeightPercent * dreamSpireGrower.spireHeight;
+                boolean canPlaceOre = i > dreamSpireGrower.oreSpawnHeightPercent * spireHeight;
 
                 //Place each spire
                 placeSpireLayer(pPos.above(i).north(northDisplacement + extraLayerNorthDisplacement).east(eastDisplacement + extraLayerEastDisplacement),
@@ -52,8 +55,8 @@ public class MediumDreamSpireFeature extends Feature<MediumDreamSpireConfigurati
                 extraLayerNorthDisplacement = randomSource.nextIntBetweenInclusive(-dreamSpireGrower.extraLayerOffsetRandomness, dreamSpireGrower.extraLayerOffsetRandomness);
             }
             //Update displacements for next layer
-            northDisplacement += randomSource.nextIntBetweenInclusive(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
-            eastDisplacement += randomSource.nextIntBetweenInclusive(0, dreamSpireGrower.horizontalLayerOffsetRandomness);
+            northDisplacement += randomSource.nextIntBetweenInclusive(-dreamSpireGrower.horizontalLayerOffsetRandomness + directionModifierNorth, dreamSpireGrower.horizontalLayerOffsetRandomness + directionModifierNorth);
+            eastDisplacement += randomSource.nextIntBetweenInclusive(-dreamSpireGrower.horizontalLayerOffsetRandomness + directionModifierEast, dreamSpireGrower.horizontalLayerOffsetRandomness + directionModifierEast);
         }
         return true;
     }
