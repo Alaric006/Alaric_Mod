@@ -59,7 +59,9 @@ public class ModDimensions {
                         new Climate.ParameterList<>(List.of(Pair.of(
                                         Climate.parameters(0.0F, 0.0F, 0.6F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.CLIFFS_OF_ASPIRATION)),
                                 Pair.of(
-                                        Climate.parameters(0.3F, 0.6F, -0.455F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN))
+                                        Climate.parameters(0.3F, 0.6F, -0.455F, 0.1F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.OCEAN)),
+                                Pair.of(
+                                        Climate.parameters(-0.45f, -1f, -0.19f, -1f, 0, -0.05f, 0f), biomeRegistry.getOrThrow(Biomes.RIVER))
 
                         ))),
                 noiseGenSettings.getOrThrow(ModNoiseGeneratorSettings.DREAMLAND));

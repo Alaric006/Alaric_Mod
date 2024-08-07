@@ -2,6 +2,7 @@ package net.alaricj.alaricmod.worldgen;
 
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
+import net.alaricj.alaricmod.block.custom.ChangelingBushBlock;
 import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration;
 import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration.MediumDreamSpireGrower;
 import net.alaricj.alaricmod.worldgen.custom.ModFeature;
@@ -10,6 +11,7 @@ import net.alaricj.alaricmod.worldgen.tree.custom.PineTrunkPlacer;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -17,11 +19,14 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.RandomPatchFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
@@ -41,8 +46,10 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_KEY = registerKey("pine");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> DREAM_SPIRE_MEDIUM_KEY = registerKey("dream_spire_medium");
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> LILURID_TREE = registerKey("lilurid_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DREAM_BERRY_BUSH_PATCH = registerKey("dream_berry_bush_patch");
+
+
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -62,6 +69,10 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.PINE_LEAVES.get()),
                 new PineFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, DREAM_BERRY_BUSH_PATCH, Feature.RANDOM_PATCH,
+                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CHANGELING_BUSH.get().defaultBlockState().setValue(ChangelingBushBlock.AGE, 2).setValue(ChangelingBushBlock.BUSH_TYPE, ChangelingBushBlock.ChangelingBushType.DreamBush))), List.of(ModBlocks.DREAMLAND_DIRT.get()))
+        );
 
         UniformInt spireSize = UniformInt.of(8, 16);
         //Create dreamSpireGrower for DreamSpireMediumConfiguration

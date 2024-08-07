@@ -26,6 +26,8 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> LILURID_TREE_PLACED_KEY = registerKey("lilurid_tree_placed_key");
 
+    public static ResourceKey<PlacedFeature> DREAM_BERRY_BUSH_PATCH_PLACED_KEY = registerKey("dream_berry_bush_placed");
+
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         register(context, LUCIDITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_LUCIDITE_ORE_KEY),
@@ -37,14 +39,19 @@ public class ModPlacedFeatures {
                 mediumDreamSpirePlacement(25));
         register(context, LILURID_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LILURID_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(15, 0.1f, 1), ModBlocks.LILURID_SAPLING.get()));
+        register(context, DREAM_BERRY_BUSH_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_BERRY_BUSH_PATCH), berryPatchPlacement(3, 8));
     }
 
+    public static List<PlacementModifier> berryPatchPlacement(int count, int onceEveryRarity) {
+        return List.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), RarityFilter.onAverageOnceEvery(onceEveryRarity));
+    }
     public static List<PlacementModifier> mediumDreamSpirePlacement(int rarity) {
         return ImmutableList.<PlacementModifier>builder()
                 .add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE)
                 .add(BiomeFilter.biome())
                 .add(RarityFilter.onAverageOnceEvery(rarity))
                 .add(NoiseBasedCountPlacement.of(16, 10.0d, 0.0d))
+                .add()
                 .build();
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {
