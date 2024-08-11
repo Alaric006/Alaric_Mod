@@ -84,6 +84,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.PINE_SAPLING);
         saplingItem(ModBlocks.LILURID_SAPLING);
         simpleItem(ModItems.DREAM_BERRY);
+        simpleItem(ModItems.DREAM_HEART);
 
     }
 

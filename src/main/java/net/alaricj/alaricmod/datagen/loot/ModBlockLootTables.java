@@ -7,10 +7,12 @@ import net.alaricj.alaricmod.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -38,6 +40,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.createOreDrop(ModBlocks.LUCIDITE_ORE.get(), ModItems.LUCIDITE.get());
         this.add(ModBlocks.LUCIDITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.LUCIDITE_ORE.get(), ModItems.LUCIDITE.get()));
+        this.add(ModBlocks.DREAM_HEART_ORE.get(), createSingleItemTable(ModItems.DREAM_HEART.get()));
         this.add(ModBlocks.DEEPSLATE_LUCIDITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.DEEPSLATE_LUCIDITE_ORE.get(), ModItems.LUCIDITE.get()));
         this.dropSelf(ModBlocks.SAPPHIRE_STAIRS.get());

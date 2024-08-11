@@ -91,7 +91,7 @@ public class ModConfiguredFeatures {
 
         register(context, DREAM_SPIRE_MEDIUM_KEY, ModFeature.DREAM_SPIRE_MEDIUM_FEATURE.get(),
                 new MediumDreamSpireConfiguration(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get().defaultBlockState()),
-                        BlockStateProvider.simple(ModBlocks.LUCIDITE_ORE.get().defaultBlockState()),
+                        BlockStateProvider.simple(ModBlocks.DREAM_HEART_ORE.get().defaultBlockState()),
                         dreamSpireGrower));
         //Add lilurid tree
         //TODO: Play with tree configuration away from Azalea tree copied features

@@ -32,14 +32,14 @@ public class ModBiomeModifiers {
                         )
                 );
 
-        context.register(
+/*        context.register(
                 ADD_TREE_PINE,
                 new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
                         HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PINE_PLACED_KEY)),
                         GenerationStep.Decoration.VEGETAL_DECORATION
                 )
-        );
+        );*/
     }
     public static ResourceKey<BiomeModifier> registerKey(String name) {
         return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(TutorialMod.MOD_ID, name));

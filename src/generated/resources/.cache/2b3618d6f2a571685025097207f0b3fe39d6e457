@@ -1,10 +1,11 @@
-// 1.20.1	2024-08-03T11:12:08.2862209	Block States: alaricmod
+// 1.20.1	2024-08-11T19:07:36.3618645	Block States: alaricmod
 8c8bfcdc72fe53a918eaddc26bdfc4a079a9cca8 assets/alaricmod/blockstates/catmint.json
 4f0ee2abad37185428494d1cf9d2a003e58d821b assets/alaricmod/blockstates/changeling_bush.json
 dc3e7afe9010c7000d8f5047db195f19c101e5f6 assets/alaricmod/blockstates/corn_crop.json
 cc5fca8a78ada2adfed208996a2817169a479fe4 assets/alaricmod/blockstates/depleted_dreamland_dirt.json
 d5a3ef65046cb8912488132ac8cde090569a4b06 assets/alaricmod/blockstates/dreamland_dirt.json
 144da682ca59f44895d946d2a3718924a2eaf7ab assets/alaricmod/blockstates/dream_glass.json
+678e662eb18a331bb25385ce455c7f1d7c615a50 assets/alaricmod/blockstates/dream_heart_ore.json
 bccc9cf2f51e31b44b00a1a639826b09251d057c assets/alaricmod/blockstates/gem_polishing_station.json
 1318be6970308d6e76e1740392ecd314c70decea assets/alaricmod/blockstates/lilurid_log.json
 597e0d97baca06bdbf3d2a3bc3a34af0a8b2bbf6 assets/alaricmod/blockstates/lilurid_sapling.json
@@ -52,6 +53,7 @@ bbcdb9863f56a8eea04b7042ad2f9a6ed08e4179 assets/alaricmod/models/block/depleted_
 22666bf5f6ca27df3d3ccb6cabed6b49a8406c3a assets/alaricmod/models/block/dream_berry_bush_stage1.json
 4d01355bc503c98e24a28368cc825297719157c6 assets/alaricmod/models/block/dream_berry_bush_stage2.json
 79adcd2dbd869415c3cef7cfd497355d9db7ad67 assets/alaricmod/models/block/dream_glass.json
+d60e4d13efc1e357505d78197fc55df2f8bcc919 assets/alaricmod/models/block/dream_heart_ore.json
 96d6384a48ef81b46f176edfa5323898186588c8 assets/alaricmod/models/block/lilurid_log.json
 8d62080a61977ed3cbd469594670e07af181babf assets/alaricmod/models/block/lilurid_log_horizontal.json
 88e32a9359550e9a5205266e55a23a50f358a7df assets/alaricmod/models/block/lilurid_sapling.json
@@ -117,6 +119,7 @@ da61cee66091470845325c8efb46eff12dd0a08d assets/alaricmod/models/block/stripped_
 508addfd4ac03294cfda95de91aa0a6437946a86 assets/alaricmod/models/item/depleted_dreamland_dirt.json
 024f0eb7d35f4d51dba64e419bc358eb05aa2286 assets/alaricmod/models/item/dreamland_dirt.json
 7a4c0369a0b7dec0233fd189d6dab78d90f4a8a8 assets/alaricmod/models/item/dream_glass.json
+5e3859fbad5bec96e88f4ef155b9e3607474cf50 assets/alaricmod/models/item/dream_heart_ore.json
 70900128224e1129ff68ef9cbbaec4498b239a43 assets/alaricmod/models/item/gem_polishing_station.json
 d05fdd19f214ae9f78e02b275af8b94eab0b6fa2 assets/alaricmod/models/item/lilurid_log.json
 6b14a11b1a0332f181686ec3e8713cf419917d5b assets/alaricmod/models/item/lucidite_deepslate_ore.json

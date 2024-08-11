@@ -1,10 +1,11 @@
-// 1.20.1	2024-07-10T16:19:45.7510123	Tags for minecraft:block mod id alaricmod
+// 1.20.1	2024-08-11T19:03:19.8644898	Tags for minecraft:block mod id alaricmod
 85694c4c8effa184583bd3c56ff86131ace571fc data/minecraft/tags/blocks/fences.json
 cf900c3c95e34b4bbca8e1073a90e4ffb6528edc data/minecraft/tags/blocks/fence_gates.json
 37b95b3e1d78dc8167d5ac487311d7f0466c90ae data/minecraft/tags/blocks/leaves.json
 6fa938e1d538720cd8e2ac391428eaf7122d2381 data/minecraft/tags/blocks/logs_that_burn.json
-dc3cd651aaa3d68ed1d9f1c4d4e418b17b9eaf2f data/minecraft/tags/blocks/mineable/pickaxe.json
-0a67928d4a5a39fe97110d3e7564e54e165b6319 data/minecraft/tags/blocks/needs_diamond_tool.json
-50aa78541c36e8dc95b0d59569b71f6edf95d055 data/minecraft/tags/blocks/needs_iron_tool.json
+e55d12574345d000161b0abfe501ec6bd749423b data/minecraft/tags/blocks/mineable/axe.json
+5ebe9ff5d2aa2b1522b5079e5d9a96166b0e3ac5 data/minecraft/tags/blocks/mineable/pickaxe.json
+11d75aa856580f46375f71e3cf5be2aa568ba625 data/minecraft/tags/blocks/needs_diamond_tool.json
+dfd8a7d66ba901689e45772334546065a67f2488 data/minecraft/tags/blocks/needs_iron_tool.json
 f2d48330aeb202cbb67b9f17d61408a040138fae data/minecraft/tags/blocks/planks.json
 474740518d58a31f8117da725032bb73b91487ba data/minecraft/tags/blocks/walls.json

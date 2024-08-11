@@ -1,9 +1,10 @@
-// 1.20.1	2024-08-02T19:04:32.0120604	Loot Tables
+// 1.20.1	2024-08-11T19:01:57.399615	Loot Tables
 2ada294334f7d8d618fb035bf6762ed43b929c06 data/alaricmod/loot_tables/blocks/catmint.json
 3dc5eb5212158f880474a6091f909e7ca1122d2a data/alaricmod/loot_tables/blocks/changeling_bush.json
 5a21e56afc4dc87e421ef9b141d1b99b9f28f824 data/alaricmod/loot_tables/blocks/corn_crop.json
 9618a0040a79d0adb4a50fa63e1c1e4daadec456 data/alaricmod/loot_tables/blocks/depleted_dreamland_dirt.json
 ac25ce72b8b520de21c3e6787ce1cb254b2e3fb0 data/alaricmod/loot_tables/blocks/dreamland_dirt.json
+b678d19e6b612eb54ae73a9ed7b905f23ff7e2ee data/alaricmod/loot_tables/blocks/dream_heart_ore.json
 2e071e38f87909641eb3f0aa6f6ccc5fd64b886d data/alaricmod/loot_tables/blocks/gem_polishing_station.json
 3845a3817177fecbf6ed8c9054edbb43ba511d30 data/alaricmod/loot_tables/blocks/lilurid_log.json
 e39aed8db3178b027aca34fafef716d817cc3fe9 data/alaricmod/loot_tables/blocks/lilurid_sapling.json

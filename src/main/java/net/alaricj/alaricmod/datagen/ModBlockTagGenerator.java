@@ -26,12 +26,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(
                 ModBlocks.SAPPHIRE_BLOCK.get(),
                 ModBlocks.RAW_SAPPHIRE_BLOCK.get(),
-                ModBlocks.SOUND_BLOCK.get()
+                ModBlocks.SOUND_BLOCK.get(),
+                ModBlocks.LILURID_LOG.get()
                 );
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 ModBlocks.LUCIDITE_DOOR.get(),
                 ModBlocks.LUCIDITE_ORE.get(),
-                ModBlocks.DEEPSLATE_LUCIDITE_ORE.get()
+                ModBlocks.DEEPSLATE_LUCIDITE_ORE.get(),
+                ModBlocks.DREAM_HEART_ORE.get()
         );
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 ModBlocks.LUCIDITE_ORE.get(),
@@ -39,7 +41,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.SAPPHIRE_BLOCK.get(),
                 ModBlocks.RAW_SAPPHIRE_BLOCK.get(),
                 ModBlocks.SOUND_BLOCK.get(),
-                ModBlocks.LUCIDITE_DOOR.get()
+                ModBlocks.LUCIDITE_DOOR.get(),
+                ModBlocks.DREAM_HEART_ORE.get()
+        );
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                ModBlocks.LILURID_LOG.get()
         );
         this.tag(BlockTags.FENCES).add(
                 ModBlocks.SAPPHIRE_FENCE.get()

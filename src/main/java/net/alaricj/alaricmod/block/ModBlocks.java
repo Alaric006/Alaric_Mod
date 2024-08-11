@@ -7,6 +7,7 @@ import net.alaricj.alaricmod.sound.ModSounds;
 import net.alaricj.alaricmod.util.ModWoodTypes;
 import net.alaricj.alaricmod.worldgen.tree.PineTreeGrower;
 import net.alaricj.alaricmod.worldgen.tree.LiluridTreeGrower;
+import net.minecraft.client.OptionInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -149,6 +150,14 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHANGELING_BUSH = BLOCKS.register("changeling_bush",
             () -> new ChangelingBushBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).lightLevel(ChangelingBushBlock::getLightLevel)));
+
+    public static final RegistryObject<Block> DREAM_HEART_ORE = registerBlock("dream_heart_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_ORE), UniformInt.of(4, 6)) {
+                @Override
+                public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+                    return 15;
+                }
+            });
 
 
 

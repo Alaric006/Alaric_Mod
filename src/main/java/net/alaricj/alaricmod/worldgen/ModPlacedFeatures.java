@@ -36,7 +36,7 @@ public class ModPlacedFeatures {
         register(context, PINE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PINE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.PINE_SAPLING.get()));
         register(context, DREAM_SPIRE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_SPIRE_MEDIUM_KEY),
-                mediumDreamSpirePlacement(50));
+                mediumDreamSpirePlacement(100));
         register(context, LILURID_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LILURID_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(15, 0.1f, 1), ModBlocks.LILURID_SAPLING.get()));
         register(context, DREAM_BERRY_BUSH_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_BERRY_BUSH_PATCH), berryPatchPlacement(3, 8));

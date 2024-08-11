@@ -63,6 +63,9 @@ public class ModItems {
     public static final RegistryObject<Item> DREAM_BERRY  = ITEMS.register("dream_berry",
             () -> new ChangelingBerry(ModBlocks.CHANGELING_BUSH.get(), ChangelingBushBlock.ChangelingBushType.DreamBush, new Item.Properties()));
 
+    public static final RegistryObject<Item> DREAM_HEART = ITEMS.register("dream_heart",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
 
 
     public static void register(IEventBus eventBus) {
