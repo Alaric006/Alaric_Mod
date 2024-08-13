@@ -43,6 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(ModItems.RAW_SAPPHIRE);
         simpleItem(ModItems.LUCIDITE);
+        simpleItem(ModItems.VOID_LAVA_BUCKET);
 
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.STRAWBERRY);

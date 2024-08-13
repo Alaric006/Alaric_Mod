@@ -5,6 +5,7 @@ import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.block.custom.ChangelingBushBlock;
 import net.alaricj.alaricmod.entity.ModEntities;
 import net.alaricj.alaricmod.entity.custom.ModBoatEntity;
+import net.alaricj.alaricmod.fluid.ModFluids;
 import net.alaricj.alaricmod.item.custom.*;
 import net.alaricj.alaricmod.sound.ModSounds;
 import net.minecraft.world.item.*;
@@ -65,6 +66,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> DREAM_HEART = ITEMS.register("dream_heart",
             () -> new Item(new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> VOID_LAVA_BUCKET = ITEMS.register("void_lava_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_VOID_LAVA, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 
 

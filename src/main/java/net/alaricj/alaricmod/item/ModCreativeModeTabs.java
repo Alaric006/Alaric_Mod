@@ -43,6 +43,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.LILURID_SAPLING.get());
                         output.accept(ModItems.DREAM_BERRY.get());
                         output.accept(ModItems.DREAM_HEART.get());
+                        output.accept(ModItems.VOID_LAVA_BUCKET.get());
                         output.accept(ModBlocks.DREAM_HEART_ORE.get());
                         output.accept(ModBlocks.GEM_POLISHING_STATION.get());
 

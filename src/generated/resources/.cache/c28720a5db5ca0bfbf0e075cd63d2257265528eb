@@ -1,4 +1,4 @@
-// 1.20.1	2024-08-11T19:01:57.399615	Item Models: alaricmod
+// 1.20.1	2024-08-13T15:03:24.9440808	Item Models: alaricmod
 39ec50e6fcf6771f1a15b717085d97532af68191 assets/alaricmod/models/item/bar_brawl_music_disc.json
 239fbd16c8395e6664bd26838d1322003899a964 assets/alaricmod/models/item/catmint.json
 59f43eca90e7dd2fadc4d8903f71fb733d55357b assets/alaricmod/models/item/corn.json
@@ -33,3 +33,4 @@ a54162c265701e729c8ad91aefb3301177040525 assets/alaricmod/models/item/sapphire_s
 a871fe19a49d6e371cd435d04cacb9bdd9bede96 assets/alaricmod/models/item/sapphire_wall.json
 bcb3658d20d2834060e79e2de3cc1ea8e27ede78 assets/alaricmod/models/item/strawberry.json
 e4c89df19f5039855fbd22596f35ad89b15cbe36 assets/alaricmod/models/item/strawberry_seeds.json
+8ca3a4be4b04b1264edad1cc4860eed9fa593866 assets/alaricmod/models/item/void_lava_bucket.json

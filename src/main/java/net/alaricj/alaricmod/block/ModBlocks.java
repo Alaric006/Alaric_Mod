@@ -2,6 +2,7 @@ package net.alaricj.alaricmod.block;
 
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.custom.*;
+import net.alaricj.alaricmod.fluid.ModFluids;
 import net.alaricj.alaricmod.item.ModItems;
 import net.alaricj.alaricmod.sound.ModSounds;
 import net.alaricj.alaricmod.util.ModWoodTypes;
@@ -158,6 +159,8 @@ public class ModBlocks {
                     return 15;
                 }
             });
+    public static final RegistryObject<LiquidBlock> VOID_LAVA_BLOCK = BLOCKS.register("void_lava_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_VOID_LAVA, BlockBehaviour.Properties.copy(Blocks.LAVA).noLootTable().liquid().lightLevel(blockstate -> 12)));
 
 
 

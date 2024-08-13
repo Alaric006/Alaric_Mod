@@ -7,6 +7,8 @@ import net.alaricj.alaricmod.block.entity.ModBlockEntities;
 import net.alaricj.alaricmod.entity.ModEntities;
 import net.alaricj.alaricmod.entity.client.ModBoatRenderer;
 import net.alaricj.alaricmod.entity.client.RhinoRenderer;
+import net.alaricj.alaricmod.fluid.ModFluidTypes;
+import net.alaricj.alaricmod.fluid.ModFluids;
 import net.alaricj.alaricmod.item.ModCreativeModeTabs;
 import net.alaricj.alaricmod.item.ModItems;
 import net.alaricj.alaricmod.loot.ModLootModifiers;
@@ -21,6 +23,8 @@ import net.alaricj.alaricmod.worldgen.custom.ModFeature;
 import net.alaricj.alaricmod.worldgen.tree.ModFoliagePlacers;
 import net.alaricj.alaricmod.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -67,6 +71,9 @@ public class TutorialMod
 
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacers.register(modEventBus);
@@ -120,6 +127,9 @@ public class TutorialMod
             EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
 
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_VOID_LAVA.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_VOID_LAVA.get(), RenderType.translucent());
 
         }
     }
