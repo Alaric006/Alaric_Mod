@@ -13,8 +13,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.heightproviders.VeryBiasedToBottomHeight;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LILURID_TREE_PLACED_KEY = registerKey("lilurid_tree_placed_key");
 
     public static ResourceKey<PlacedFeature> DREAM_BERRY_BUSH_PATCH_PLACED_KEY = registerKey("dream_berry_bush_placed");
+    public static ResourceKey<PlacedFeature> VOID_LAVA_SPRING_PLACED_KEY = registerKey("void_lava_spring_placed_key");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -40,10 +41,11 @@ public class ModPlacedFeatures {
         register(context, LILURID_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LILURID_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(15, 0.1f, 1), ModBlocks.LILURID_SAPLING.get()));
         register(context, DREAM_BERRY_BUSH_PATCH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DREAM_BERRY_BUSH_PATCH), berryPatchPlacement(3, 8));
+        register(context, VOID_LAVA_SPRING_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.VOID_LAVA_SPRING), voidLavaSpringPlacement());
     }
 
     public static List<PlacementModifier> berryPatchPlacement(int count, int onceEveryRarity) {
-        return List.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), RarityFilter.onAverageOnceEvery(onceEveryRarity));
+        return ImmutableList.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome(), RarityFilter.onAverageOnceEvery(onceEveryRarity));
     }
     public static List<PlacementModifier> mediumDreamSpirePlacement(int rarity) {
         return ImmutableList.<PlacementModifier>builder()
@@ -53,6 +55,11 @@ public class ModPlacedFeatures {
                 .add(NoiseBasedCountPlacement.of(16, 5.0d, 0.0d))
                 .add()
                 .build();
+    }
+
+    public static final List<PlacementModifier> voidLavaSpringPlacement() {
+        //Taken and modified from SPRING_LAVA placements modifiers in MiscOverworldPlacements
+        return List.of(CountPlacement.of(20), InSquarePlacement.spread(), HeightRangePlacement.of(VeryBiasedToBottomHeight.of(VerticalAnchor.bottom(), VerticalAnchor.belowTop(8), 8)), BiomeFilter.biome());
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(TutorialMod.MOD_ID, name));

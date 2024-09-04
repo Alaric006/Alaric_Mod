@@ -3,31 +3,26 @@ package net.alaricj.alaricmod.worldgen;
 import net.alaricj.alaricmod.TutorialMod;
 import net.alaricj.alaricmod.block.ModBlocks;
 import net.alaricj.alaricmod.block.custom.ChangelingBushBlock;
+import net.alaricj.alaricmod.fluid.ModFluids;
 import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration;
-import net.alaricj.alaricmod.worldgen.custom.MediumDreamSpireConfiguration.MediumDreamSpireGrower;
 import net.alaricj.alaricmod.worldgen.custom.ModFeature;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineFoliagePlacer;
 import net.alaricj.alaricmod.worldgen.tree.custom.PineTrunkPlacer;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.RandomPatchFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -48,6 +43,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DREAM_SPIRE_MEDIUM_KEY = registerKey("dream_spire_medium");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LILURID_TREE = registerKey("lilurid_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DREAM_BERRY_BUSH_PATCH = registerKey("dream_berry_bush_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VOID_LAVA_SPRING = registerKey("void_lava_spring_overworld");
 
 
 
@@ -101,6 +97,10 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.DREAM_GLASS.get()),
                 new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 50),
                 new TwoLayersFeatureSize(1, 0 ,1)).dirt(BlockStateProvider.simple(ModBlocks.DREAMLAND_DIRT.get())).build());
+
+        final HolderSet<Block> VOID_LAVA_SPRING_CAN_REPLACE = HolderSet.direct(Block::builtInRegistryHolder, ModBlocks.DEPLETED_DREAMLAND_DIRT.get());
+        register(context, VOID_LAVA_SPRING, Feature.SPRING,
+                new SpringConfiguration(ModFluids.SOURCE_VOID_LAVA.get().defaultFluidState(),true, 4 ,1, VOID_LAVA_SPRING_CAN_REPLACE));
     }
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(TutorialMod.MOD_ID, name));
